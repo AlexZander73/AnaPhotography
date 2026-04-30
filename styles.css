@@ -1050,8 +1050,10 @@ ul {
 
 .designer-credit a {
   color: var(--white);
-  text-decoration: underline;
+  text-decoration: underline !important;
+  text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
+  font-weight: 600;
 }
 
 .designer-credit a:hover,

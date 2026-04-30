@@ -90,13 +90,3 @@ A fallback button in the contact section still opens the short Google Form link 
 3. Set source to the main branch root (or `/docs` if you move files there).
 4. Save and wait for deployment.
 5. Replace canonical/OG URLs in `index.html` with your live domain.
-
-## Notes for future improvements
-
-- Add real pricing/packages once approved
-- Replace testimonial placeholders with approved client quotes
-- Embed Google Form or add custom form-to-Google-Forms workflow
-- Add booking calendar integration
-- Add blog/recent shoots section
-- Add client proofing gallery flow
-- Add Instagram feed only if API/privacy/legal handling is acceptable

@@ -67,7 +67,16 @@ In `script.js`, replace:
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
 ```
 
-All booking buttons/links using `data-booking-link` or `.booking-link` automatically use this constant and open in a new tab.
+All booking buttons/links using `data-booking-link` or `.booking-link` now scroll users to the embedded booking form in the contact section.
+
+The embedded form uses:
+
+```js
+const GOOGLE_FORM_EMBED_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/viewform?embedded=true";
+```
+
+A fallback button in the contact section still opens the short Google Form link in a new tab.
 
 ## Deploy to GitHub Pages
 

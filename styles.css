@@ -783,8 +783,27 @@ ul {
   color: var(--muted);
 }
 
-.contact-card ul {
-  margin-top: 0.8rem;
+.form-embed-wrap {
+  margin-top: 1rem;
+  border: 1px solid var(--white-soft);
+  border-radius: calc(var(--radius-lg) - 0.2rem);
+  overflow: hidden;
+  background: var(--ivory);
+}
+
+.booking-form-frame {
+  display: block;
+  width: 100%;
+  min-height: 980px;
+  border: 0;
+  background: var(--ivory);
+}
+
+.contact-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .closing-cta {
@@ -1018,6 +1037,10 @@ a:focus-visible {
 
   .testimonial-row {
     grid-auto-columns: minmax(14rem, 1fr);
+  }
+
+  .booking-form-frame {
+    min-height: 920px;
   }
 }
 

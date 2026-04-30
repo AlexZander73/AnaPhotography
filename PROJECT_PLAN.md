@@ -54,7 +54,7 @@ Build first complete version of a static photography portfolio + booking website
   - Used as favicon
   - Replaced `Studio Name` in header/footer/copyright
 - Added featured offer/booking CTA section
-- Added contact section using Google Form button flow + visible note
+- Added contact section using embedded Google Form + fallback direct-link button
 - Added placeholder testimonials (JS-driven)
 - Added FAQ accordion (JS-driven) with `aria-expanded`
 - Added final CTA section
@@ -69,10 +69,12 @@ Build first complete version of a static photography portfolio + booking website
 - Added image error fallback styling so missing placeholder images still look intentional
 - Added centralized booking-link logic:
   - `GOOGLE_FORM_URL` constant in `script.js`
-  - Applied to all `.booking-link` / `[data-booking-link]` elements
-  - Console warning if placeholder URL remains
+  - `GOOGLE_FORM_EMBED_URL` constant in `script.js`
+  - `.booking-link` / `[data-booking-link]` elements scroll to the embedded booking form
+  - Fallback direct-link button opens the short Google Form URL in a new tab
 - Updated `GOOGLE_FORM_URL` to live short link:
   - `https://forms.gle/YRux1aAa2SjVNpq47`
+- Embedded live Google Form directly into the contact section
 - Exported selected client-supplied originals into optimized site assets:
   - `assets/images/web/*.webp`
   - `assets/images/thumbnails/*.webp`
@@ -120,6 +122,8 @@ Build first complete version of a static photography portfolio + booking website
 - `script.js`
   - Current value:
     - `const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";`
+  - Embedded form value:
+    - `const GOOGLE_FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/viewform?embedded=true";`
 - No HTML changes required once this constant is updated.
 
 ## Assumptions made

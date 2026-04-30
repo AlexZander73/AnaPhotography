@@ -1,4 +1,6 @@
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
+const GOOGLE_FORM_EMBED_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/viewform?embedded=true";
 
 const featuredSlides = [
   {
@@ -179,6 +181,7 @@ const faqs = [
 document.addEventListener("DOMContentLoaded", () => {
   setYear();
   wireBookingLinks();
+  wireEmbeddedForm();
   initNavigation();
   initScrollReveal();
   markMissingImagesOnError(document);
@@ -225,6 +228,7 @@ function setYear() {
 function wireBookingLinks() {
   const bookingElements = document.querySelectorAll("[data-booking-link], .booking-link");
   const usesPlaceholder = GOOGLE_FORM_URL.includes("REPLACE_WITH_REAL_FORM_LINK");
+  const bookingTarget = document.getElementById("contact");
 
   if (usesPlaceholder) {
     console.warn(
@@ -234,15 +238,42 @@ function wireBookingLinks() {
 
   bookingElements.forEach((element) => {
     if (element instanceof HTMLAnchorElement) {
-      element.href = GOOGLE_FORM_URL;
-      element.target = "_blank";
-      element.rel = "noopener noreferrer";
+      element.href = "#contact";
+      element.removeAttribute("target");
+      element.removeAttribute("rel");
+      element.addEventListener("click", (event) => {
+        if (!bookingTarget) {
+          return;
+        }
+
+        event.preventDefault();
+        bookingTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
       return;
     }
 
     element.addEventListener("click", () => {
-      window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer");
+      bookingTarget?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+  });
+}
+
+function wireEmbeddedForm() {
+  const frame = document.getElementById("booking-form-frame");
+  const externalLinks = document.querySelectorAll("[data-external-booking-link]");
+
+  if (frame instanceof HTMLIFrameElement) {
+    frame.src = GOOGLE_FORM_EMBED_URL;
+  }
+
+  externalLinks.forEach((link) => {
+    if (!(link instanceof HTMLAnchorElement)) {
+      return;
+    }
+
+    link.href = GOOGLE_FORM_URL;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
   });
 }
 

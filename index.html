@@ -316,9 +316,10 @@
           <div class="contact-copy">
             <h2 id="contact-title">Let’s plan your shoot</h2>
             <p>
-              Booking requests open in a short form so your details land safely in one place.
+              Booking requests are handled through the form below so your details land safely in
+              one place without sending you off the site.
             </p>
-            <a class="btn btn-primary booking-link" data-booking-link href="#">Open booking form</a>
+            <a class="btn btn-primary booking-link" data-booking-link href="#contact">Jump to booking form</a>
             <p class="contact-note">
               Suggested details to share: Name, Email, Instagram handle, Session type, Preferred date
               or timeframe, Location, Vibe or mood, and any must-have shots.
@@ -326,17 +327,32 @@
           </div>
 
           <article class="contact-card">
-            <h3>Booking details</h3>
+            <h3>Booking form</h3>
             <p>
-              I’ll follow up after your form submission with availability, package options, and next
-              steps.
+              Fill out the embedded form below. If the embed does not load cleanly on your device,
+              use the direct link to open the full form in a new tab.
             </p>
-            <ul>
-              <li>Email: hello@replace-with-real-email.com</li>
-              <li>Instagram: @replace-with-real-handle</li>
-              <li>Location: Replace with service area</li>
-            </ul>
-            <!-- Future custom form placeholder: Add an embedded or native form here once workflow is confirmed. -->
+            <div class="form-embed-wrap">
+              <iframe
+                class="booking-form-frame"
+                id="booking-form-frame"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/viewform?embedded=true"
+                title="Booking request form"
+                loading="lazy"
+              >
+                Loading booking form…
+              </iframe>
+            </div>
+            <div class="contact-actions">
+              <a
+                class="btn btn-secondary external-booking-link"
+                data-external-booking-link
+                href="https://forms.gle/YRux1aAa2SjVNpq47"
+              >
+                Open form in a new tab
+              </a>
+            </div>
+            <!-- Future custom form placeholder: Replace iframe with a native form workflow if needed later. -->
           </article>
         </div>
       </section>

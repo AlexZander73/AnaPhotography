@@ -1,3 +1,4 @@
+// Website designed by Zach Mackay: https://alexzander73.github.io/index.html
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
 const THEME_STORAGE_KEY = "ab-theme";
 

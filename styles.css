@@ -1,3 +1,4 @@
+/* Website designed by Zach Mackay: https://alexzander73.github.io/index.html */
 :root {
   --white: #FFFFFF;
   --white-soft: #f7e5d7cc;
@@ -972,6 +973,24 @@ ul {
   width: var(--container);
   color: var(--slate);
   font-size: 0.86rem;
+}
+
+.designer-credit {
+  margin: 0.35rem auto 0;
+  width: var(--container);
+  color: var(--slate);
+  font-size: 0.86rem;
+}
+
+.designer-credit a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.designer-credit a:hover,
+.designer-credit a:focus-visible {
+  color: var(--accent);
 }
 
 .lightbox {

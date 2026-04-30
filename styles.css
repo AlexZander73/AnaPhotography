@@ -289,7 +289,8 @@ ul {
   padding-top: 7rem;
   display: grid;
   align-items: center;
-  overflow: clip;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .hero-bg {
@@ -845,7 +846,7 @@ ul {
 
 .closing-cta {
   position: relative;
-  overflow: clip;
+  overflow: hidden;
   min-height: 52vh;
   display: grid;
   align-items: center;

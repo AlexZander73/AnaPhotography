@@ -883,7 +883,7 @@ ul {
   border-radius: var(--radius-lg);
   border: 1px solid var(--white-soft);
   padding: 1rem;
-  background: linear-gradient(170deg, var(--surface-tint), var(--surface-shadow));
+  background: linear-gradient(170deg, #e6cbb6, #d8a9a3);
 }
 
 .contact-card h3 {

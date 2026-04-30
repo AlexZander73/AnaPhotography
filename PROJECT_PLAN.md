@@ -97,7 +97,7 @@ Build first complete version of a static photography portfolio + booking website
 
 ## Known placeholders
 - Brand now uses `AB` logo/monogram; broader business name is still to be confirmed if needed
-- Email: `hello@replace-with-real-email.com`
+- Email placeholder removed from footer
 - Service area/location text placeholders
 - Canonical URL: `https://example.com/replace-with-live-url`
 - Placeholder testimonials and some FAQ answer details

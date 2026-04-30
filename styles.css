@@ -63,19 +63,15 @@ html[data-theme="requested"] {
 }
 
 html[data-theme="requested"] .hero .btn-primary,
-html[data-theme="requested"] .hero-cta-row .btn-primary {
-  background: linear-gradient(135deg, var(--rust), var(--rust));
-  color: var(--ivory);
+html[data-theme="requested"] .hero-cta-row .btn-primary,
+html[data-theme="requested"] .nav-booking-btn {
+  background: linear-gradient(135deg, var(--ivory), var(--ivory));
+  border-color: var(--white-soft);
+  color: var(--rust);
 }
 
 html[data-theme="requested"] .brand-logo {
   box-shadow: 0 10px 24px var(--charcoal-soft);
-}
-
-html[data-theme="requested"] .nav-booking-btn {
-  background: linear-gradient(135deg, var(--rust), var(--rust));
-  border-color: var(--rust);
-  color: var(--ivory);
 }
 
 html[data-theme="requested"] #services .session-card,
@@ -100,21 +96,21 @@ html[data-theme="requested"] .offer-card-dark-text li {
   color: var(--ivory);
 }
 
-html[data-theme="requested"] .offer .btn-primary,
 html[data-theme="requested"] .contact .btn-primary,
 html[data-theme="requested"] .closing-cta .btn-primary {
-  background: linear-gradient(135deg, var(--navy), var(--navy));
+  background: linear-gradient(135deg, var(--navy), var(--ink));
   border-color: var(--white-soft);
   color: var(--ivory);
 }
 
 html[data-theme="requested"] .contact-card {
-  background: linear-gradient(170deg, var(--navy), var(--ink));
+  background: linear-gradient(168deg, var(--navy), var(--ink));
+  border-color: var(--white-soft);
 }
 
 html[data-theme="requested"] .theme-btn.is-active {
-  background: linear-gradient(135deg, var(--rust), var(--rust));
-  border-color: var(--rust);
+  background: linear-gradient(135deg, var(--navy), var(--navy));
+  border-color: var(--white-soft);
   color: var(--ivory);
 }
 
@@ -956,7 +952,7 @@ ul {
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--white-soft);
   border-radius: 999px;
-  background: var(--charcoal-soft);
+  background: color-mix(in srgb, var(--bg-soft) 82%, transparent);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
 }

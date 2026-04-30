@@ -746,9 +746,15 @@ ul {
   color: var(--muted);
 }
 
-.service-price {
+.service-meta {
   margin-top: auto;
+  display: grid;
+  gap: 0.9rem;
   padding-top: 1rem;
+}
+
+.service-price {
+  margin-top: 0;
   color: var(--white);
   font-family: var(--headline);
   font-size: 1.1rem;
@@ -757,7 +763,7 @@ ul {
 }
 
 .service-cta {
-  margin-top: 0.9rem;
+  margin-top: 0;
   width: 100%;
 }
 

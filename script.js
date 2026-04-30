@@ -1,135 +1,515 @@
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
-const GOOGLE_FORM_EMBED_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/viewform?embedded=true";
 const THEME_STORAGE_KEY = "ab-theme";
 
 const featuredSlides = [
   {
-    src: "assets/images/web/gallery-01.webp",
-    alt: "Soft portrait with warm directional light and editorial framing",
-    category: "Portrait",
-    mood: "Soft",
-    caption: "Quiet confidence with warm highlights and a close editorial crop."
+    "src": "assets/images/web/library-titelbild-2000-19to9.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Soft"
   },
   {
-    src: "assets/images/web/gallery-02.webp",
-    alt: "Couple walking outdoors in golden hour with candid movement",
-    category: "Couples",
-    mood: "Romantic",
-    caption: "Movement over perfection. Mood over stiffness."
+    "src": "assets/images/web/library-catlina-aw-ig-12.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Editorial"
   },
   {
-    src: "assets/images/web/gallery-03.webp",
-    alt: "Creative studio portrait using dramatic shadow lines",
-    category: "Creative",
-    mood: "Bold",
-    caption: "Bold edges, deeper shadows, and just enough attitude."
+    "src": "assets/images/web/library-22-06-19-lara-alper-und-katja-188.webp",
+    "alt": "Couples session photograph from Behmen Studio portfolio",
+    "category": "Couples",
+    "mood": "Soft"
   },
   {
-    src: "assets/images/web/gallery-04.webp",
-    alt: "Lifestyle portrait inside a textured interior space",
-    category: "Lifestyle",
-    mood: "Candid",
-    caption: "Natural expressions in spaces that already feel like home."
+    "src": "assets/images/web/library-mittwochulu0144.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Editorial"
+  },
+  {
+    "src": "assets/images/web/library-6c7a8484.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Bold"
+  },
+  {
+    "src": "assets/images/web/library-2look-natur-orig-10.webp",
+    "alt": "Lifestyle photography image from Behmen Studio portfolio",
+    "category": "Lifestyle",
+    "mood": "Soft"
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-37.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody"
+  },
+  {
+    "src": "assets/images/web/library-073a4234-2-2k-2.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Editorial"
+  },
+  {
+    "src": "assets/images/web/library-6c7a8452.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Moody"
+  },
+  {
+    "src": "assets/images/web/library-a7401618.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Moody"
+  },
+  {
+    "src": "assets/images/web/library-dsc-6470.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid"
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-69.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid"
   }
 ];
 
 const galleryItems = [
   {
-    src: "assets/images/web/gallery-soft-01.webp",
-    alt: "Soft portrait close-up with neutral wardrobe",
-    category: "Portrait",
-    mood: "Soft",
-    caption: "Soft light, soft focus, strong eyes.",
-    span: 36
+    "src": "assets/images/web/library-titelbild-2000-19to9.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Soft",
+    "span": 28
   },
   {
-    src: "assets/images/web/gallery-bold-01.webp",
-    alt: "Bold fashion-inspired portrait with directional pose",
-    category: "Creative",
-    mood: "Bold",
-    caption: "A little drama in all the right places.",
-    span: 48
+    "src": "assets/images/web/library-1691479-14-web-1900xv2.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Soft",
+    "span": 45
   },
   {
-    src: "assets/images/web/gallery-romantic-01.webp",
-    alt: "Romantic couple portrait during sunset",
-    category: "Couples",
-    mood: "Romantic",
-    caption: "Tender, cinematic, and unforced.",
-    span: 34
+    "src": "assets/images/web/library-rumyana-ig-1-2.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Editorial",
+    "span": 45
   },
   {
-    src: "assets/images/web/gallery-editorial-01.webp",
-    alt: "Editorial portrait with hard light and serious expression",
-    category: "Creative",
-    mood: "Editorial",
-    caption: "Editorial energy with clean composition.",
-    span: 40
+    "src": "assets/images/web/library-catlina-aw-ig-12.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Editorial",
+    "span": 28
   },
   {
-    src: "assets/images/web/gallery-candid-01.webp",
-    alt: "Candid laugh during outdoor lifestyle session",
-    category: "Lifestyle",
-    mood: "Candid",
-    caption: "Unplanned expression, perfectly timed.",
-    span: 32
+    "src": "assets/images/web/library-hochzeit-im-studio-88.webp",
+    "alt": "Couples session photograph from Behmen Studio portfolio",
+    "category": "Couples",
+    "mood": "Candid",
+    "span": 45
   },
   {
-    src: "assets/images/web/gallery-moody-01.webp",
-    alt: "Moody portrait in low-light with textured background",
-    category: "Portrait",
-    mood: "Moody",
-    caption: "Low light and layered mood.",
-    span: 50
+    "src": "assets/images/web/library-22-06-19-lara-alper-und-katja-188.webp",
+    "alt": "Couples session photograph from Behmen Studio portfolio",
+    "category": "Couples",
+    "mood": "Soft",
+    "span": 28
   },
   {
-    src: "assets/images/web/gallery-soft-02.webp",
-    alt: "Soft bridal-style portrait with warm tones",
-    category: "Portrait",
-    mood: "Soft",
-    caption: "Warm tones and calm posture.",
-    span: 38
+    "src": "assets/images/web/library-mittwochulu0144.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Editorial",
+    "span": 28
   },
   {
-    src: "assets/images/web/gallery-bold-02.webp",
-    alt: "Bold portrait with striking posture and dark styling",
-    category: "Creative",
-    mood: "Bold",
-    caption: "Strong shape, clean contrast.",
-    span: 42
+    "src": "assets/images/web/library-6c7a8484.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Bold",
+    "span": 28
   },
   {
-    src: "assets/images/web/gallery-romantic-02.webp",
-    alt: "Romantic couple embrace near ocean",
-    category: "Couples",
-    mood: "Romantic",
-    caption: "Connected and close without over-posing.",
-    span: 35
+    "src": "assets/images/web/library-dsc-2743.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Bold",
+    "span": 45
   },
   {
-    src: "assets/images/web/gallery-editorial-02.webp",
-    alt: "Editorial black-and-white look with styled wardrobe",
-    category: "Branding",
-    mood: "Editorial",
-    caption: "High-polish but still human.",
-    span: 47
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-30.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 45
   },
   {
-    src: "assets/images/web/gallery-candid-02.webp",
-    alt: "Candid portrait with motion blur effect",
-    category: "Events",
-    mood: "Candid",
-    caption: "Movement kept in, not edited out.",
-    span: 33
+    "src": "assets/images/web/library-2look-natur-orig-18.webp",
+    "alt": "Lifestyle photography image from Behmen Studio portfolio",
+    "category": "Lifestyle",
+    "mood": "Candid",
+    "span": 45
   },
   {
-    src: "assets/images/web/gallery-moody-02.webp",
-    alt: "Moody indoor portrait with side lighting",
-    category: "Portrait",
-    mood: "Moody",
-    caption: "Shadow detail with subtle grit.",
-    span: 44
+    "src": "assets/images/web/library-a7401944.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Soft",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-073a4501-2-3-2-3-2.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Moody",
+    "span": 40
+  },
+  {
+    "src": "assets/images/web/library-catlina-aw-ig-13.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Bold",
+    "span": 40
+  },
+  {
+    "src": "assets/images/web/library-22-06-19-lara-alper-und-katja-17.webp",
+    "alt": "Couples session photograph from Behmen Studio portfolio",
+    "category": "Couples",
+    "mood": "Romantic",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-a7401958.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Moody",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-a7405460b.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-6c7a8437.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Bold",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-dsc-2334.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Bold",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-rumyana-ig-1-3.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Bold",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-dsc-2803.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Soft",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-22-06-19-lara-alper-und-katja-35.webp",
+    "alt": "Couples session photograph from Behmen Studio portfolio",
+    "category": "Couples",
+    "mood": "Candid",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-56.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-2look-natur-orig-10.webp",
+    "alt": "Lifestyle photography image from Behmen Studio portfolio",
+    "category": "Lifestyle",
+    "mood": "Soft",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-a7401618.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-catlina-aw-ig-2.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Soft",
+    "span": 40
+  },
+  {
+    "src": "assets/images/web/library-22-06-19-lara-alper-und-katja-60.webp",
+    "alt": "Couples session photograph from Behmen Studio portfolio",
+    "category": "Couples",
+    "mood": "Romantic",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-073a4234-2-2k-2.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Editorial",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-26.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-a7401711.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Bold",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-catlina-aw-ig-6.webp",
+    "alt": "Brand portrait photograph from Behmen Studio portfolio",
+    "category": "Branding",
+    "mood": "Editorial",
+    "span": 40
+  },
+  {
+    "src": "assets/images/web/library-22-06-19-lara-alper-und-katja-79.webp",
+    "alt": "Couples session photograph from Behmen Studio portfolio",
+    "category": "Couples",
+    "mood": "Soft",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-073a4442-2-3-4.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Bold",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-27.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-a7401873.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Editorial",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-073a4568-2-4-kopie.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Editorial",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-28.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-dsc-2343.webp",
+    "alt": "Portrait photography image from Behmen Studio portfolio",
+    "category": "Portrait",
+    "mood": "Editorial",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-6c7a8452.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-29.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-6c7a8467.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Editorial",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-31.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-mittwochulu0129.webp",
+    "alt": "Creative editorial portrait from Behmen Studio portfolio",
+    "category": "Creative",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-32.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-37.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-45.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-55.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-57.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-58.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-59.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-6.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-60.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-61.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-64.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 40
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-69.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-26portfolio-ev-beispiele-70.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-a7405463b.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-dsc-6376.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-dsc-6420.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 45
+  },
+  {
+    "src": "assets/images/web/library-dsc-6470.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Candid",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-dsc-6527.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Moody",
+    "span": 28
+  },
+  {
+    "src": "assets/images/web/library-dsc-6755.webp",
+    "alt": "Event photography image from Behmen Studio portfolio",
+    "category": "Events",
+    "mood": "Bold",
+    "span": 28
   }
 ];
 
@@ -184,7 +564,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setYear();
   initThemeSelector();
   wireBookingLinks();
-  wireEmbeddedForm();
   initNavigation();
   initScrollReveal();
   markMissingImagesOnError(document);
@@ -287,7 +666,6 @@ function initThemeSelector() {
 function wireBookingLinks() {
   const bookingElements = document.querySelectorAll("[data-booking-link], .booking-link");
   const usesPlaceholder = GOOGLE_FORM_URL.includes("REPLACE_WITH_REAL_FORM_LINK");
-  const bookingTarget = document.getElementById("contact");
 
   if (usesPlaceholder) {
     console.warn(
@@ -297,42 +675,15 @@ function wireBookingLinks() {
 
   bookingElements.forEach((element) => {
     if (element instanceof HTMLAnchorElement) {
-      element.href = "#contact";
-      element.removeAttribute("target");
-      element.removeAttribute("rel");
-      element.addEventListener("click", (event) => {
-        if (!bookingTarget) {
-          return;
-        }
-
-        event.preventDefault();
-        bookingTarget.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+      element.href = GOOGLE_FORM_URL;
+      element.target = "_blank";
+      element.rel = "noopener noreferrer";
       return;
     }
 
     element.addEventListener("click", () => {
-      bookingTarget?.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer");
     });
-  });
-}
-
-function wireEmbeddedForm() {
-  const frame = document.getElementById("booking-form-frame");
-  const externalLinks = document.querySelectorAll("[data-external-booking-link]");
-
-  if (frame instanceof HTMLIFrameElement) {
-    frame.src = GOOGLE_FORM_EMBED_URL;
-  }
-
-  externalLinks.forEach((link) => {
-    if (!(link instanceof HTMLAnchorElement)) {
-      return;
-    }
-
-    link.href = GOOGLE_FORM_URL;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
   });
 }
 
@@ -432,6 +783,8 @@ function initFeaturedCarousel() {
   }
 
   let index = 0;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let autoAdvanceId = null;
 
   const dotButtons = featuredSlides.map((slide, slideIndex) => {
     const dot = document.createElement("button");
@@ -443,6 +796,7 @@ function initFeaturedCarousel() {
     dot.addEventListener("click", () => {
       index = slideIndex;
       render();
+      restartAutoAdvance();
     });
     dots.appendChild(dot);
     return dot;
@@ -462,6 +816,13 @@ function initFeaturedCarousel() {
     dotButtons.forEach((dot, dotIndex) => {
       const selected = dotIndex === index;
       dot.setAttribute("aria-selected", String(selected));
+      if (selected) {
+        dot.scrollIntoView({
+          behavior: reducedMotion ? "auto" : "smooth",
+          block: "nearest",
+          inline: "center"
+        });
+      }
     });
   };
 
@@ -475,17 +836,57 @@ function initFeaturedCarousel() {
     render();
   };
 
-  prevBtn.addEventListener("click", previous);
-  nextBtn.addEventListener("click", next);
+  const stopAutoAdvance = () => {
+    if (autoAdvanceId) {
+      window.clearInterval(autoAdvanceId);
+      autoAdvanceId = null;
+    }
+  };
+
+  const startAutoAdvance = () => {
+    stopAutoAdvance();
+    if (reducedMotion || featuredSlides.length < 2) {
+      return;
+    }
+    autoAdvanceId = window.setInterval(next, 4600);
+  };
+
+  const restartAutoAdvance = () => {
+    startAutoAdvance();
+  };
+
+  prevBtn.addEventListener("click", () => {
+    previous();
+    restartAutoAdvance();
+  });
+  nextBtn.addEventListener("click", () => {
+    next();
+    restartAutoAdvance();
+  });
 
   addSwipeSupport(stage, previous, next);
+  stage.addEventListener("mouseenter", stopAutoAdvance);
+  stage.addEventListener("mouseleave", startAutoAdvance);
+  stage.addEventListener("focusin", stopAutoAdvance);
+  stage.addEventListener("focusout", startAutoAdvance);
+  dots.addEventListener("mouseenter", stopAutoAdvance);
+  dots.addEventListener("mouseleave", startAutoAdvance);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoAdvance();
+      return;
+    }
+    startAutoAdvance();
+  });
   render();
+  startAutoAdvance();
 
   return { next, previous };
 }
 
 function initMoodGallery() {
   const grid = document.getElementById("gallery-grid");
+  const loadMoreBtn = document.getElementById("gallery-load-more");
   const filterButtons = document.querySelectorAll(".filter-btn");
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightbox-image");
@@ -493,7 +894,7 @@ function initMoodGallery() {
   const prevBtn = document.querySelector(".lightbox-nav.prev");
   const nextBtn = document.querySelector(".lightbox-nav.next");
 
-  if (!grid || !lightbox || !lightboxImage || !closeBtn || !prevBtn || !nextBtn) {
+  if (!grid || !loadMoreBtn || !lightbox || !lightboxImage || !closeBtn || !prevBtn || !nextBtn) {
     return {
       closeLightbox: () => {},
       previousLightbox: () => {},
@@ -504,6 +905,12 @@ function initMoodGallery() {
   let activeFilter = "All";
   let filteredItems = [...galleryItems];
   let lightboxIndex = 0;
+  let visibleCount = 0;
+
+  const getBatchSize = () => (window.matchMedia("(max-width: 759px)").matches ? 8 : 12);
+  const resetVisibleCount = () => {
+    visibleCount = getBatchSize();
+  };
 
   const renderLightbox = () => {
     const item = filteredItems[lightboxIndex];
@@ -567,10 +974,13 @@ function initMoodGallery() {
       const empty = document.createElement("p");
       empty.textContent = "No images in this mood yet. Add more gallery items in script.js.";
       grid.appendChild(empty);
+      loadMoreBtn.hidden = true;
       return;
     }
 
-    filteredItems.forEach((item, itemIndex) => {
+    const visibleItems = filteredItems.slice(0, visibleCount);
+
+    visibleItems.forEach((item, itemIndex) => {
       const card = document.createElement("button");
       card.className = "gallery-item";
       card.type = "button";
@@ -604,6 +1014,7 @@ function initMoodGallery() {
       grid.appendChild(card);
     });
 
+    loadMoreBtn.hidden = visibleCount >= filteredItems.length;
     markMissingImagesOnError(grid);
   };
 
@@ -612,7 +1023,34 @@ function initMoodGallery() {
       activeFilter = button.dataset.filter || "All";
       filterButtons.forEach((btn) => btn.classList.remove("is-active"));
       button.classList.add("is-active");
+      resetVisibleCount();
       renderGrid();
+    });
+  });
+
+  loadMoreBtn.addEventListener("click", () => {
+    const anchorIndex = Math.max(0, visibleCount - 1);
+    const anchorCardBefore = grid.children.item(anchorIndex);
+    const anchorTopBefore =
+      anchorCardBefore instanceof HTMLElement
+        ? anchorCardBefore.getBoundingClientRect().top
+        : loadMoreBtn.getBoundingClientRect().top;
+
+    visibleCount += getBatchSize();
+    renderGrid();
+
+    window.requestAnimationFrame(() => {
+      const anchorCardAfter = grid.children.item(Math.min(anchorIndex, grid.children.length - 1));
+      const anchorTopAfter =
+        anchorCardAfter instanceof HTMLElement
+          ? anchorCardAfter.getBoundingClientRect().top
+          : loadMoreBtn.getBoundingClientRect().top;
+
+      window.scrollBy({
+        top: anchorTopAfter - anchorTopBefore,
+        left: 0,
+        behavior: "auto"
+      });
     });
   });
 
@@ -627,6 +1065,7 @@ function initMoodGallery() {
     }
   });
 
+  resetVisibleCount();
   renderGrid();
 
   return {

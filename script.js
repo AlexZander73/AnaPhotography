@@ -1,6 +1,8 @@
 // Website designed by Zach Mackay: https://alexzander73.github.io/index.html
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
 const THEME_STORAGE_KEY = "ab-theme";
+const DEFAULT_LOGO_URL = "assets/icons/logo-ab.svg";
+const REQUESTED_LOGO_URL = "assets/icons/logo-ab-requested.svg";
 
 const featuredSlides = [
   {
@@ -611,6 +613,7 @@ function setYear() {
 function applySavedTheme() {
   const savedTheme = getSavedTheme();
   document.documentElement.dataset.theme = savedTheme;
+  syncThemeBrandAssets(savedTheme);
 }
 
 function getSavedTheme() {
@@ -634,6 +637,7 @@ function initThemeSelector() {
 
   const setTheme = (theme) => {
     document.documentElement.dataset.theme = theme;
+    syncThemeBrandAssets(theme);
 
     try {
       window.localStorage.setItem(THEME_STORAGE_KEY, theme);
@@ -662,6 +666,21 @@ function initThemeSelector() {
       }
     });
   });
+}
+
+function syncThemeBrandAssets(theme) {
+  const logoUrl = theme === "requested" ? REQUESTED_LOGO_URL : DEFAULT_LOGO_URL;
+
+  document.querySelectorAll(".brand-logo").forEach((logo) => {
+    if (logo instanceof HTMLImageElement) {
+      logo.src = logoUrl;
+    }
+  });
+
+  const favicon = document.getElementById("site-favicon");
+  if (favicon instanceof HTMLLinkElement) {
+    favicon.href = logoUrl;
+  }
 }
 
 function wireBookingLinks() {

@@ -62,6 +62,62 @@ html[data-theme="requested"] {
     linear-gradient(180deg, var(--charcoal) 0%, var(--ink) 68%, var(--navy) 100%);
 }
 
+html[data-theme="requested"] .hero .btn-primary,
+html[data-theme="requested"] .hero-cta-row .btn-primary {
+  background: linear-gradient(135deg, var(--rust), var(--rust));
+  color: var(--ivory);
+}
+
+html[data-theme="requested"] .brand-logo {
+  box-shadow: 0 10px 24px var(--charcoal-soft);
+}
+
+html[data-theme="requested"] .nav-booking-btn {
+  background: linear-gradient(135deg, var(--rust), var(--rust));
+  border-color: var(--rust);
+  color: var(--ivory);
+}
+
+html[data-theme="requested"] #services .session-card,
+html[data-theme="requested"] [aria-labelledby="session-types-title"] .session-card {
+  background: linear-gradient(165deg, var(--charcoal), var(--rust));
+  border-color: var(--white-soft);
+}
+
+html[data-theme="requested"] #services .service-price,
+html[data-theme="requested"] [aria-labelledby="session-types-title"] .service-price {
+  color: var(--ivory);
+}
+
+html[data-theme="requested"] .offer-card {
+  background: linear-gradient(165deg, var(--navy), var(--ink));
+  border-color: var(--white-soft);
+}
+
+html[data-theme="requested"] .offer-card-dark-text,
+html[data-theme="requested"] .offer-card-dark-text h3,
+html[data-theme="requested"] .offer-card-dark-text li {
+  color: var(--ivory);
+}
+
+html[data-theme="requested"] .offer .btn-primary,
+html[data-theme="requested"] .contact .btn-primary,
+html[data-theme="requested"] .closing-cta .btn-primary {
+  background: linear-gradient(135deg, var(--navy), var(--navy));
+  border-color: var(--white-soft);
+  color: var(--ivory);
+}
+
+html[data-theme="requested"] .contact-card {
+  background: linear-gradient(170deg, var(--navy), var(--ink));
+}
+
+html[data-theme="requested"] .theme-btn.is-active {
+  background: linear-gradient(135deg, var(--rust), var(--rust));
+  border-color: var(--rust);
+  color: var(--ivory);
+}
+
 * {
   box-sizing: border-box;
 }

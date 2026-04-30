@@ -1029,29 +1029,8 @@ function initMoodGallery() {
   });
 
   loadMoreBtn.addEventListener("click", () => {
-    const anchorIndex = Math.max(0, visibleCount - 1);
-    const anchorCardBefore = grid.children.item(anchorIndex);
-    const anchorTopBefore =
-      anchorCardBefore instanceof HTMLElement
-        ? anchorCardBefore.getBoundingClientRect().top
-        : loadMoreBtn.getBoundingClientRect().top;
-
     visibleCount += getBatchSize();
     renderGrid();
-
-    window.requestAnimationFrame(() => {
-      const anchorCardAfter = grid.children.item(Math.min(anchorIndex, grid.children.length - 1));
-      const anchorTopAfter =
-        anchorCardAfter instanceof HTMLElement
-          ? anchorCardAfter.getBoundingClientRect().top
-          : loadMoreBtn.getBoundingClientRect().top;
-
-      window.scrollBy({
-        top: anchorTopAfter - anchorTopBefore,
-        left: 0,
-        behavior: "auto"
-      });
-    });
   });
 
   closeBtn.addEventListener("click", closeLightbox);

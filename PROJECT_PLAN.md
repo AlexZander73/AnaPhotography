@@ -46,9 +46,13 @@ Build first complete version of a static photography portfolio + booking website
 - Added photoshoot experience section with 4-step flow cards
 - Replaced the original session-types block with a 3-column `Services` section:
   - Business Portrait
-  - Personal Photography
+  - Private Shooting
   - Event / Commercial
   - Included pricing lines and enquiry CTAs
+- Added simple `AB` brand mark:
+  - SVG logo in `assets/icons/logo-ab.svg`
+  - Used as favicon
+  - Replaced `Studio Name` in header/footer/copyright
 - Added featured offer/booking CTA section
 - Added contact section using Google Form button flow + visible note
 - Added placeholder testimonials (JS-driven)
@@ -83,7 +87,7 @@ Build first complete version of a static photography portfolio + booking website
 - Optional: add favicon/social assets in `assets/icons/`
 
 ## Known placeholders
-- Brand: `Studio Name`
+- Brand now uses `AB` logo/monogram; broader business name is still to be confirmed if needed
 - Email: `hello@replace-with-real-email.com`
 - Instagram: `@replace-with-real-handle`
 - Service area/location text placeholders

@@ -175,10 +175,25 @@ ul {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   text-decoration: none;
   font-family: var(--headline);
   letter-spacing: 0.08em;
   font-size: 1.15rem;
+}
+
+.brand-logo {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px var(--charcoal-soft);
+}
+
+.footer-brand {
+  margin: 0;
 }
 
 .site-nav {

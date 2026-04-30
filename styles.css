@@ -296,9 +296,7 @@ ul {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(115deg, var(--ink), var(--charcoal-soft)),
-    url("assets/images/web/hero-main.webp") center/cover no-repeat;
+  background: url("assets/images/web/hero-main.webp") center/cover no-repeat;
   transform: scale(1.05);
   animation: hero-drift 24s ease-in-out infinite alternate;
 }

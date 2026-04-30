@@ -44,7 +44,11 @@ Build first complete version of a static photography portfolio + booking website
   - Lightbox close/prev/next + Escape support
   - Swipe support in lightbox
 - Added photoshoot experience section with 4-step flow cards
-- Added session types cards with required copy and CTAs
+- Replaced the original session-types block with a 3-column `Services` section:
+  - Business Portrait
+  - Personal Photography
+  - Event / Commercial
+  - Included pricing lines and enquiry CTAs
 - Added featured offer/booking CTA section
 - Added contact section using Google Form button flow + visible note
 - Added placeholder testimonials (JS-driven)

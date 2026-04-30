@@ -1,6 +1,7 @@
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
 const GOOGLE_FORM_EMBED_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/viewform?embedded=true";
+const THEME_STORAGE_KEY = "ab-theme";
 
 const featuredSlides = [
   {
@@ -179,7 +180,9 @@ const faqs = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+  applySavedTheme();
   setYear();
+  initThemeSelector();
   wireBookingLinks();
   wireEmbeddedForm();
   initNavigation();
@@ -223,6 +226,62 @@ function setYear() {
   if (year) {
     year.textContent = String(new Date().getFullYear());
   }
+}
+
+function applySavedTheme() {
+  const savedTheme = getSavedTheme();
+  document.documentElement.dataset.theme = savedTheme;
+}
+
+function getSavedTheme() {
+  try {
+    const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme === "requested" || savedTheme === "warm") {
+      return savedTheme;
+    }
+  } catch (error) {
+    return "warm";
+  }
+
+  return "warm";
+}
+
+function initThemeSelector() {
+  const buttons = document.querySelectorAll("[data-theme-choice]");
+  if (!buttons.length) {
+    return;
+  }
+
+  const setTheme = (theme) => {
+    document.documentElement.dataset.theme = theme;
+
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch (error) {
+      // Ignore storage failures and keep the theme in-memory for this session.
+    }
+
+    buttons.forEach((button) => {
+      if (!(button instanceof HTMLButtonElement)) {
+        return;
+      }
+
+      const isActive = button.dataset.themeChoice === theme;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  };
+
+  setTheme(getSavedTheme());
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const theme = button.dataset.themeChoice;
+      if (theme === "requested" || theme === "warm") {
+        setTheme(theme);
+      }
+    });
+  });
 }
 
 function wireBookingLinks() {

@@ -17,6 +17,10 @@
   --accent-2: var(--navy);
   --line: var(--white-soft);
   --shadow: 0 24px 44px var(--charcoal-soft);
+  --surface-panel: linear-gradient(180deg, var(--charcoal), var(--navy));
+  --surface-panel-deep: linear-gradient(180deg, var(--ink), var(--charcoal));
+  --surface-accent: linear-gradient(135deg, var(--rust), var(--navy));
+  --surface-frame: linear-gradient(145deg, var(--white-soft), var(--navy));
   --radius: 1.1rem;
   --radius-lg: 1.7rem;
   --container: min(1120px, 92vw);
@@ -37,9 +41,9 @@ body {
   font-family: var(--body);
   color: var(--text);
   background:
-    radial-gradient(circle at 12% 14%, var(--navy), var(--ink) 34%),
-    radial-gradient(circle at 86% 30%, var(--rust), var(--charcoal) 42%),
-    linear-gradient(180deg, var(--ink), var(--charcoal) 38%, var(--ink) 100%);
+    radial-gradient(circle at 12% 10%, var(--navy), var(--ink) 34%),
+    radial-gradient(circle at 88% 78%, var(--rust), var(--charcoal) 30%),
+    linear-gradient(180deg, var(--ink), var(--charcoal) 52%, var(--ink) 100%);
   line-height: 1.6;
 }
 
@@ -135,13 +139,15 @@ ul {
 }
 
 .btn-primary {
-  background: linear-gradient(120deg, var(--ivory), var(--white));
-  color: var(--ink);
+  background: var(--surface-accent);
+  border-color: var(--white-soft);
+  color: var(--white);
 }
 
 .btn-secondary {
   border-color: var(--white-soft);
-  background: var(--charcoal-soft);
+  background: var(--white-soft);
+  color: var(--ink);
 }
 
 .text-link {
@@ -161,7 +167,7 @@ ul {
 }
 
 .site-header.is-scrolled {
-  background: var(--charcoal-soft);
+  background: var(--ink);
   backdrop-filter: blur(8px);
   border-color: var(--white-soft);
 }
@@ -260,7 +266,7 @@ ul {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(110deg, var(--charcoal-soft), var(--ink)),
+    linear-gradient(115deg, var(--ink), var(--charcoal-soft)),
     url("assets/images/web/hero-main.webp") center/cover no-repeat;
   transform: scale(1.05);
   animation: hero-drift 24s ease-in-out infinite alternate;
@@ -329,9 +335,7 @@ ul {
   overflow: hidden;
   border: 1px solid var(--white-soft);
   box-shadow: var(--shadow);
-  background:
-    linear-gradient(130deg, var(--rust), var(--navy)),
-    var(--bg-soft);
+  background: var(--surface-panel);
 }
 
 .hero-card img {
@@ -423,7 +427,7 @@ ul {
   position: relative;
   border-radius: var(--radius-lg);
   padding: 0.55rem;
-  background: linear-gradient(140deg, var(--ivory), var(--rust));
+  background: var(--surface-frame);
   box-shadow: var(--shadow);
 }
 
@@ -479,7 +483,7 @@ ul {
 
 .carousel-btn:hover,
 .carousel-btn:focus-visible {
-  background: var(--navy);
+  background: var(--rust);
 }
 
 .featured-stage {
@@ -549,8 +553,8 @@ ul {
 }
 
 .filter-btn.is-active {
-  background: linear-gradient(130deg, var(--ivory), var(--white));
-  color: var(--ink);
+  background: var(--surface-accent);
+  color: var(--white);
   border-color: var(--white-soft);
 }
 
@@ -570,7 +574,7 @@ ul {
   overflow: hidden;
   border: 1px solid var(--white-soft);
   cursor: zoom-in;
-  background: linear-gradient(145deg, var(--rust), var(--charcoal));
+  background: var(--surface-panel);
   grid-row: span var(--span, 28);
 }
 
@@ -599,7 +603,7 @@ ul {
 }
 
 .gallery-overlay .mood {
-  color: var(--ivory);
+  color: var(--white);
 }
 
 .experience {
@@ -636,7 +640,7 @@ ul {
 }
 
 .session-card {
-  background: linear-gradient(180deg, var(--charcoal), var(--navy));
+  background: var(--surface-panel);
   border: 1px solid var(--white-soft);
   border-radius: var(--radius);
   padding: 1rem;
@@ -656,7 +660,7 @@ ul {
 }
 
 .service-price {
-  color: var(--ivory);
+  color: var(--white);
   font-family: var(--headline);
   font-size: 1.1rem;
   letter-spacing: 0.04em;
@@ -673,7 +677,7 @@ ul {
   border: 1px solid var(--white-soft);
   border-radius: var(--radius-lg);
   padding: 1.2rem;
-  background: linear-gradient(155deg, var(--rust), var(--navy));
+  background: var(--surface-accent);
 }
 
 .offer-card h3 {
@@ -774,7 +778,7 @@ ul {
   border-radius: var(--radius-lg);
   border: 1px solid var(--white-soft);
   padding: 1.25rem;
-  background: linear-gradient(170deg, var(--charcoal), var(--rust));
+  background: var(--surface-panel);
 }
 
 .contact-card h2,
@@ -838,6 +842,7 @@ ul {
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 2rem 0 1rem;
+  background: var(--surface-panel-deep);
 }
 
 .footer-grid {
@@ -864,9 +869,9 @@ ul {
 
 .policy-page {
   background:
-    radial-gradient(circle at 12% 14%, var(--navy), var(--ink) 34%),
-    radial-gradient(circle at 86% 30%, var(--rust), var(--charcoal) 42%),
-    linear-gradient(180deg, var(--ink), var(--charcoal) 38%, var(--ink) 100%);
+    radial-gradient(circle at 12% 10%, var(--navy), var(--ink) 34%),
+    radial-gradient(circle at 88% 78%, var(--rust), var(--charcoal) 30%),
+    linear-gradient(180deg, var(--ink), var(--charcoal) 52%, var(--ink) 100%);
 }
 
 .policy-nav {
@@ -894,7 +899,7 @@ ul {
   padding: 1.1rem 1.2rem;
   border: 1px solid var(--white-soft);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--charcoal), var(--navy));
+  background: var(--surface-panel);
 }
 
 .policy-content h2 {
@@ -1025,7 +1030,7 @@ a:focus-visible {
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 0.7rem;
-    background: transparent;
+    background: var(--ink);
     border: 0;
     padding: 0;
   }

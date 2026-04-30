@@ -1037,8 +1037,7 @@ ul {
 }
 
 .designer-credit {
-  margin: 0.35rem auto 0;
-  width: var(--container);
+  margin: 0.35rem 0 0;
   color: var(--slate);
   font-size: 0.86rem;
 }

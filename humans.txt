@@ -1,0 +1,10 @@
+/* TEAM */
+Website design and development: Zach Mackay
+Site: https://alexzander73.github.io/index.html
+
+Photography and brand content: Anastasiya Behmenburg
+Instagram: https://www.instagram.com/anasta_behm/
+
+/* SITE */
+Built with plain HTML, CSS, and vanilla JavaScript
+No template used

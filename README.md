@@ -2,6 +2,11 @@
 
 Static, mobile-first photography portfolio and booking website built with plain HTML, CSS, and vanilla JavaScript.
 
+## Credits
+
+- Website design and development: [Zach Mackay](https://alexzander73.github.io/index.html)
+- Photography copyright and brand content: Anastasiya Behmenburg
+
 ## Project overview
 
 This site is designed as an elegant, image-led booking funnel for a solo photographer or boutique studio.

@@ -41,9 +41,9 @@ body {
   font-family: var(--body);
   color: var(--text);
   background:
-    radial-gradient(circle at 12% 10%, var(--navy), var(--ink) 34%),
-    radial-gradient(circle at 88% 78%, var(--rust), var(--charcoal) 30%),
-    linear-gradient(180deg, var(--ink), var(--charcoal) 52%, var(--ink) 100%);
+    radial-gradient(circle at 20% 8%, var(--rust), var(--charcoal) 34%),
+    radial-gradient(circle at 50% 118%, var(--navy), var(--ink) 42%),
+    linear-gradient(180deg, var(--rust), var(--charcoal) 34%, var(--ink) 72%, var(--navy) 100%);
   line-height: 1.6;
 }
 
@@ -869,9 +869,9 @@ ul {
 
 .policy-page {
   background:
-    radial-gradient(circle at 12% 10%, var(--navy), var(--ink) 34%),
-    radial-gradient(circle at 88% 78%, var(--rust), var(--charcoal) 30%),
-    linear-gradient(180deg, var(--ink), var(--charcoal) 52%, var(--ink) 100%);
+    radial-gradient(circle at 20% 8%, var(--rust), var(--charcoal) 34%),
+    radial-gradient(circle at 50% 118%, var(--navy), var(--ink) 42%),
+    linear-gradient(180deg, var(--rust), var(--charcoal) 34%, var(--ink) 72%, var(--navy) 100%);
 }
 
 .policy-nav {

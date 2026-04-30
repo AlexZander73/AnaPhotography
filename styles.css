@@ -323,6 +323,11 @@ ul {
   max-width: 48rem;
 }
 
+.hero-content h1,
+.hero-subheadline {
+  text-shadow: 0 4px 18px var(--charcoal-soft);
+}
+
 .kicker {
   margin-bottom: 0.9rem;
   text-transform: uppercase;

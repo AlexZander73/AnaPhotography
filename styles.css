@@ -307,9 +307,7 @@ ul {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.16;
-  background-image: radial-gradient(var(--white) 0.4px, var(--ink) 0.5px);
-  background-size: 4px 4px;
+  display: none;
 }
 
 @keyframes hero-drift {

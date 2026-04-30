@@ -108,6 +108,40 @@ html[data-theme="requested"] .contact-card {
   border-color: var(--white-soft);
 }
 
+html[data-theme="requested"] .contact {
+  position: relative;
+  overflow: hidden;
+}
+
+html[data-theme="requested"] .contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(144, 149, 167, 0.18), rgba(15, 23, 34, 0) 34%),
+    radial-gradient(circle at 82% 26%, rgba(22, 45, 90, 0.58), rgba(15, 23, 34, 0) 40%),
+    linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, rgba(15, 23, 34, 0.38) 18%, rgba(22, 45, 90, 0.56) 100%);
+  pointer-events: none;
+}
+
+html[data-theme="requested"] .contact .container,
+html[data-theme="requested"] .closing-cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-theme="requested"] .closing-cta {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 34, 0.1) 0%, rgba(22, 45, 90, 0.45) 38%, rgba(15, 23, 34, 0.82) 100%);
+}
+
+html[data-theme="requested"] .closing-bg {
+  background:
+    radial-gradient(circle at 24% 22%, rgba(144, 149, 167, 0.16), rgba(15, 23, 34, 0) 28%),
+    linear-gradient(140deg, rgba(25, 25, 25, 0.84), rgba(22, 45, 90, 0.92)),
+    url("assets/images/web/final-cta-placeholder.webp") center/cover no-repeat;
+}
+
 html[data-theme="requested"] .theme-btn.is-active {
   background: linear-gradient(135deg, var(--navy), var(--navy));
   border-color: var(--white-soft);

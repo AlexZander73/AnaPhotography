@@ -193,7 +193,7 @@ ul {
   inset: 0 0 auto;
   z-index: 100;
   transition: background-color 260ms ease, backdrop-filter 260ms ease, border-color 260ms ease;
-  border-bottom: 1px solid var(--charcoal);
+  border-bottom: 1px solid transparent;
 }
 
 .site-header.is-scrolled {

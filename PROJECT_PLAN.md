@@ -53,6 +53,13 @@ Build first complete version of a static photography portfolio + booking website
   - SVG logo in `assets/icons/logo-ab.svg`
   - Used as favicon
   - Replaced `Studio Name` in header/footer/copyright
+- Added legal pages:
+  - `terms.html`
+  - `privacy.html`
+  - Linked both pages from the footer
+- Updated footer social/copyright details:
+  - Instagram linked to `@anasta_behm`
+  - Copyright attribution linked to Zach Mackay
 - Added featured offer/booking CTA section
 - Added contact section using embedded Google Form + fallback direct-link button
 - Added placeholder testimonials (JS-driven)
@@ -91,7 +98,6 @@ Build first complete version of a static photography portfolio + booking website
 ## Known placeholders
 - Brand now uses `AB` logo/monogram; broader business name is still to be confirmed if needed
 - Email: `hello@replace-with-real-email.com`
-- Instagram: `@replace-with-real-handle`
 - Service area/location text placeholders
 - Canonical URL: `https://example.com/replace-with-live-url`
 - Placeholder testimonials and some FAQ answer details

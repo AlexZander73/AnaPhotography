@@ -862,6 +862,50 @@ ul {
   text-decoration: none;
 }
 
+.policy-page {
+  background:
+    radial-gradient(circle at 12% 14%, var(--navy), var(--ink) 34%),
+    radial-gradient(circle at 86% 30%, var(--rust), var(--charcoal) 42%),
+    linear-gradient(180deg, var(--ink), var(--charcoal) 38%, var(--ink) 100%);
+}
+
+.policy-nav {
+  position: static;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.policy-main {
+  padding-top: 6rem;
+}
+
+.policy-wrap {
+  max-width: 860px;
+}
+
+.policy-content {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.policy-content section {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--white-soft);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--charcoal), var(--navy));
+}
+
+.policy-content h2 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  margin-bottom: 0.6rem;
+}
+
+.policy-content p {
+  color: var(--muted);
+}
+
 .copyright {
   margin: 1.2rem auto 0;
   width: var(--container);
@@ -974,6 +1018,16 @@ a:focus-visible {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+  }
+
+  .policy-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    background: transparent;
+    border: 0;
+    padding: 0;
   }
 
   .site-nav .btn {

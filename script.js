@@ -816,13 +816,6 @@ function initFeaturedCarousel() {
     dotButtons.forEach((dot, dotIndex) => {
       const selected = dotIndex === index;
       dot.setAttribute("aria-selected", String(selected));
-      if (selected) {
-        dot.scrollIntoView({
-          behavior: reducedMotion ? "auto" : "smooth",
-          block: "nearest",
-          inline: "center"
-        });
-      }
     });
   };
 

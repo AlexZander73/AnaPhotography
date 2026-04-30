@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Name | Portrait, Couples & Creative Photography</title>
+    <meta
+      name="description"
+      content="Elegant portrait and creative photography with guided sessions, polished edits, and a booking flow designed to feel easy from first message to final gallery."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Studio Name | Photography with a little attitude." />
+    <meta
+      property="og:description"
+      content="Portraits, couples, and creative sessions with warm direction and editorial energy."
+    />
+    <meta property="og:image" content="assets/images/web/og-cover-placeholder.webp" />
+    <meta property="og:url" content="https://example.com/replace-with-live-url" />
+    <link rel="canonical" href="https://example.com/replace-with-live-url" />
+    <link rel="preload" as="image" href="assets/images/web/hero-main.webp" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="#home" aria-label="Studio Name home">Studio Name</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#experience">Experience</a>
+          <a href="#sessions">Sessions</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-primary booking-link" data-booking-link href="#contact">Book a session</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section" id="home" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="grain" aria-hidden="true"></div>
+        <div class="container hero-content reveal">
+          <p class="kicker">Portraits • Couples • Creative Sessions</p>
+          <h1 id="hero-title">Photography with a little attitude.</h1>
+          <p class="hero-subheadline">
+            Elegant portraits, soft chaos, sharp moments, and images that feel like you.
+          </p>
+          <div class="hero-cta-row">
+            <a class="btn btn-primary booking-link" data-booking-link href="#contact">Book a session</a>
+            <a class="btn btn-secondary" href="#gallery">View the gallery</a>
+          </div>
+        </div>
+
+        <div class="hero-cards" aria-hidden="true">
+          <figure class="hero-card card-a">
+            <img src="assets/images/web/hero-card-01.webp" alt="" loading="eager" decoding="async" />
+          </figure>
+          <figure class="hero-card card-b">
+            <img src="assets/images/web/hero-card-02.webp" alt="" loading="eager" decoding="async" />
+          </figure>
+          <figure class="hero-card card-c">
+            <img src="assets/images/web/hero-card-03.webp" alt="" loading="eager" decoding="async" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="badges section reveal" aria-label="Session vibe badges">
+        <div class="container badge-row">
+          <p class="badge-pill">Guided posing</p>
+          <p class="badge-pill">Relaxed sessions</p>
+          <p class="badge-pill">Edited with care</p>
+          <p class="badge-pill">Studio or location</p>
+          <p class="badge-pill">No stiff awkward energy</p>
+        </div>
+      </section>
+
+      <section class="intro section reveal" aria-labelledby="intro-title">
+        <div class="container intro-grid">
+          <div class="intro-copy">
+            <h2 id="intro-title">You do not need to know what to do.</h2>
+            <p>
+              Not everyone knows what to do in front of a camera. That is the point. The session is
+              guided, relaxed, and shaped around your energy — whether that means soft and romantic,
+              bold and editorial, playful and chaotic, or something a little dangerous in the best
+              way.
+            </p>
+            <a class="text-link" href="#experience">See how sessions flow</a>
+          </div>
+          <figure class="intro-image frame-image">
+            <img
+              src="assets/images/web/intro-story.webp"
+              alt="Placeholder portrait composition for studio storytelling"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="featured section" id="gallery" aria-labelledby="featured-title">
+        <div class="container reveal">
+          <div class="section-head">
+            <h2 id="featured-title">Signature frames</h2>
+            <p>Large moments, quiet details, and the in-between expressions that hit hardest.</p>
+          </div>
+
+          <div class="featured-carousel" aria-label="Featured gallery carousel">
+            <button class="carousel-btn prev" type="button" aria-label="Previous featured image">
+              <span aria-hidden="true">←</span>
+            </button>
+
+            <figure class="featured-stage frame-image" id="featured-stage">
+              <img
+                id="featured-image"
+                src="assets/images/web/gallery-01.webp"
+                alt=""
+                loading="eager"
+                decoding="async"
+              />
+              <figcaption class="featured-caption" id="featured-caption"></figcaption>
+            </figure>
+
+            <button class="carousel-btn next" type="button" aria-label="Next featured image">
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="carousel-meta">
+            <p id="featured-meta" aria-live="polite"></p>
+            <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Featured slides"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mood-gallery section reveal" aria-labelledby="mood-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="mood-title">Mood wall</h2>
+            <p>Filter by feeling, then open any image for a closer look.</p>
+          </div>
+
+          <div class="filter-row" role="toolbar" aria-label="Gallery filter buttons">
+            <button class="filter-btn is-active" type="button" data-filter="All">All</button>
+            <button class="filter-btn" type="button" data-filter="Soft">Soft</button>
+            <button class="filter-btn" type="button" data-filter="Bold">Bold</button>
+            <button class="filter-btn" type="button" data-filter="Romantic">Romantic</button>
+            <button class="filter-btn" type="button" data-filter="Editorial">Editorial</button>
+            <button class="filter-btn" type="button" data-filter="Candid">Candid</button>
+            <button class="filter-btn" type="button" data-filter="Moody">Moody</button>
+          </div>
+
+          <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="experience section reveal" id="experience" aria-labelledby="experience-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="experience-title">How the shoot unfolds</h2>
+            <p>A clear flow so you know what to expect before the camera even comes out.</p>
+          </div>
+
+          <div class="experience-steps" role="list">
+            <article class="step-card" role="listitem">
+              <p class="step-no">01</p>
+              <h3>Before the shoot</h3>
+              <p>
+                We talk through the mood, outfits, location, and the kind of version of yourself you
+                want the camera to meet.
+              </p>
+            </article>
+            <article class="step-card" role="listitem">
+              <p class="step-no">02</p>
+              <h3>During the shoot</h3>
+              <p>
+                No stiff posing marathon. You’ll get direction when you need it, space when you don’t,
+                and enough movement to keep things natural.
+              </p>
+            </article>
+            <article class="step-card" role="listitem">
+              <p class="step-no">03</p>
+              <h3>After the shoot</h3>
+              <p>
+                The final images are selected, edited, and delivered with care so they feel polished
+                without losing your real expression.
+              </p>
+            </article>
+            <article class="step-card" role="listitem">
+              <p class="step-no">04</p>
+              <h3>The reveal</h3>
+              <p>
+                Choose the images that actually feel like you — the quiet ones, the bold ones, and the
+                ones you did not expect to love.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sessions section reveal" id="sessions" aria-labelledby="sessions-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="sessions-title">Session types</h2>
+            <p>Flexible formats for different stories, personalities, and seasons of life.</p>
+          </div>
+
+          <div class="session-grid">
+            <article class="session-card">
+              <div class="session-media frame-image" aria-hidden="true">
+                <img src="assets/images/thumbnails/session-portrait.webp" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3>Portraits</h3>
+              <p>Clean, expressive portraits for when you want to look like yourself — only sharper.</p>
+              <p class="best-for"><strong>Best for:</strong> personal portraits, profile updates, milestone moments.</p>
+              <a class="text-link booking-link" data-booking-link href="#contact">Ask about this session</a>
+            </article>
+
+            <article class="session-card">
+              <div class="session-media frame-image" aria-hidden="true">
+                <img src="assets/images/thumbnails/session-couples.webp" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3>Couples</h3>
+              <p>Romantic, playful, intimate, or completely chaotic. Preferably all four.</p>
+              <p class="best-for"><strong>Best for:</strong> anniversaries, engagement season, “just because” sessions.</p>
+              <a class="text-link booking-link" data-booking-link href="#contact">Ask about this session</a>
+            </article>
+
+            <article class="session-card">
+              <div class="session-media frame-image" aria-hidden="true">
+                <img src="assets/images/thumbnails/session-editorial.webp" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3>Creative Editorial</h3>
+              <p>For dramatic lighting, bolder styling, and images with a little bite.</p>
+              <p class="best-for"><strong>Best for:</strong> fashion-led stories, concept shoots, creative direction.</p>
+              <a class="text-link booking-link" data-booking-link href="#contact">Ask about this session</a>
+            </article>
+
+            <article class="session-card">
+              <div class="session-media frame-image" aria-hidden="true">
+                <img src="assets/images/thumbnails/session-lifestyle.webp" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3>Lifestyle</h3>
+              <p>Natural images with warmth, movement, and real personality.</p>
+              <p class="best-for"><strong>Best for:</strong> at-home stories, day-in-the-life sessions, family rhythm.</p>
+              <a class="text-link booking-link" data-booking-link href="#contact">Ask about this session</a>
+            </article>
+
+            <article class="session-card">
+              <div class="session-media frame-image" aria-hidden="true">
+                <img src="assets/images/thumbnails/session-events.webp" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3>Events</h3>
+              <p>Candid coverage for moments that should not disappear into someone’s camera roll.</p>
+              <p class="best-for"><strong>Best for:</strong> launches, birthdays, intimate celebrations.</p>
+              <a class="text-link booking-link" data-booking-link href="#contact">Ask about this session</a>
+            </article>
+
+            <article class="session-card">
+              <div class="session-media frame-image" aria-hidden="true">
+                <img src="assets/images/thumbnails/session-branding.webp" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3>Branding</h3>
+              <p>Personal brand images that feel polished without becoming corporate wallpaper.</p>
+              <p class="best-for"><strong>Best for:</strong> founders, creators, service businesses.</p>
+              <a class="text-link booking-link" data-booking-link href="#contact">Ask about this session</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="offer section reveal" aria-labelledby="offer-title">
+        <div class="container offer-wrap">
+          <div class="offer-copy">
+            <h2 id="offer-title">Ready when you are.</h2>
+            <p>
+              Tell me what you are imagining — polished portraits, soft romance, bold editorial
+              energy, or something that does not quite fit in a box yet.
+            </p>
+            <a class="btn btn-primary booking-link" data-booking-link href="#contact">Start your booking request</a>
+          </div>
+          <article class="offer-card">
+            <h3>Session enquiries now open</h3>
+            <ul>
+              <li>Portraits, couples, creative, lifestyle, events</li>
+              <li>Custom quotes available</li>
+              <li>Limited weekly availability</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="testimonials section reveal" aria-labelledby="testimonials-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="testimonials-title">Kind words, soon to be real ones</h2>
+            <p>Placeholder testimonials ready to be replaced with approved client feedback.</p>
+          </div>
+          <div class="testimonial-row" id="testimonial-row"></div>
+        </div>
+      </section>
+
+      <section class="faq section reveal" id="faq" aria-labelledby="faq-title">
+        <div class="container faq-wrap">
+          <div class="section-head">
+            <h2 id="faq-title">FAQ</h2>
+            <p>Simple answers now, easy to update later.</p>
+          </div>
+          <div class="faq-list" id="faq-list"></div>
+        </div>
+      </section>
+
+      <section class="contact section reveal" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-copy">
+            <h2 id="contact-title">Let’s plan your shoot</h2>
+            <p>
+              Booking requests open in a short form so your details land safely in one place.
+            </p>
+            <a class="btn btn-primary booking-link" data-booking-link href="#">Open booking form</a>
+            <p class="contact-note">
+              Suggested details to share: Name, Email, Instagram handle, Session type, Preferred date
+              or timeframe, Location, Vibe or mood, and any must-have shots.
+            </p>
+          </div>
+
+          <article class="contact-card">
+            <h3>Booking details</h3>
+            <p>
+              I’ll follow up after your form submission with availability, package options, and next
+              steps.
+            </p>
+            <ul>
+              <li>Email: hello@replace-with-real-email.com</li>
+              <li>Instagram: @replace-with-real-handle</li>
+              <li>Location: Replace with service area</li>
+            </ul>
+            <!-- Future custom form placeholder: Add an embedded or native form here once workflow is confirmed. -->
+          </article>
+        </div>
+      </section>
+
+      <section class="closing-cta section" aria-labelledby="closing-title">
+        <div class="closing-bg" aria-hidden="true"></div>
+        <div class="container reveal closing-inner">
+          <h2 id="closing-title">Bring the mood. I’ll bring the camera.</h2>
+          <a class="btn btn-primary booking-link" data-booking-link href="#">Start your booking request</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="brand">Studio Name</p>
+          <p class="footer-tagline">Portrait photography with warmth, direction, and style.</p>
+        </div>
+
+        <div>
+          <p><a href="https://instagram.com/replace-with-real-handle" target="_blank" rel="noreferrer">Instagram</a></p>
+          <p><a href="mailto:hello@replace-with-real-email.com">hello@replace-with-real-email.com</a></p>
+          <p>Location: Replace with service area</p>
+        </div>
+
+        <nav aria-label="Footer links" class="footer-links">
+          <a href="#gallery">Gallery</a>
+          <a href="#sessions">Sessions</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <p class="copyright">© <span id="year"></span> Studio Name. All rights reserved.</p>
+    </footer>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+      <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+      <button class="lightbox-nav prev" type="button" aria-label="Previous image">←</button>
+      <figure class="lightbox-frame frame-image">
+        <img id="lightbox-image" src="" alt="" loading="lazy" decoding="async" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox-nav next" type="button" aria-label="Next image">→</button>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -419,14 +419,12 @@ function initScrollReveal() {
 
 function initFeaturedCarousel() {
   const image = document.getElementById("featured-image");
-  const caption = document.getElementById("featured-caption");
-  const meta = document.getElementById("featured-meta");
   const dots = document.getElementById("carousel-dots");
   const prevBtn = document.querySelector(".carousel-btn.prev");
   const nextBtn = document.querySelector(".carousel-btn.next");
   const stage = document.getElementById("featured-stage");
 
-  if (!image || !caption || !meta || !dots || !prevBtn || !nextBtn || !stage) {
+  if (!image || !dots || !prevBtn || !nextBtn || !stage) {
     return {
       next: () => {},
       previous: () => {}
@@ -455,8 +453,6 @@ function initFeaturedCarousel() {
 
     image.src = slide.src;
     image.alt = slide.alt;
-    caption.textContent = slide.caption;
-    meta.textContent = `${slide.category} • ${slide.mood} • ${index + 1} of ${featuredSlides.length}`;
 
     stage.classList.remove("image-missing");
     image.onerror = () => {
@@ -493,12 +489,11 @@ function initMoodGallery() {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightbox-image");
-  const lightboxCaption = document.getElementById("lightbox-caption");
   const closeBtn = document.querySelector(".lightbox-close");
   const prevBtn = document.querySelector(".lightbox-nav.prev");
   const nextBtn = document.querySelector(".lightbox-nav.next");
 
-  if (!grid || !lightbox || !lightboxImage || !lightboxCaption || !closeBtn || !prevBtn || !nextBtn) {
+  if (!grid || !lightbox || !lightboxImage || !closeBtn || !prevBtn || !nextBtn) {
     return {
       closeLightbox: () => {},
       previousLightbox: () => {},
@@ -518,7 +513,6 @@ function initMoodGallery() {
 
     lightboxImage.src = item.src;
     lightboxImage.alt = item.alt;
-    lightboxCaption.textContent = `${item.caption} (${item.mood})`;
 
     const frame = lightboxImage.closest(".lightbox-frame");
     if (frame) {
@@ -597,11 +591,7 @@ function initMoodGallery() {
         { once: true }
       );
 
-      const overlay = document.createElement("div");
-      overlay.className = "gallery-overlay";
-      overlay.innerHTML = `<p>${item.caption}</p><p class="mood">${item.mood}</p>`;
-
-      card.append(image, overlay);
+      card.append(image);
 
       card.addEventListener("click", () => openLightbox(itemIndex));
       card.addEventListener("keydown", (event) => {

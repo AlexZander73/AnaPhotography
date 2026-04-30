@@ -530,24 +530,13 @@ ul {
   object-fit: cover;
 }
 
-.featured-caption {
-  margin-top: 0.9rem;
-  color: var(--white-soft);
-  font-size: 0.95rem;
-}
-
 .carousel-meta {
   margin-top: 0.95rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-#featured-meta {
-  color: var(--muted);
-  font-size: 0.92rem;
 }
 
 .carousel-dots {
@@ -620,22 +609,6 @@ ul {
 .gallery-item:hover img,
 .gallery-item:focus-visible img {
   transform: scale(1.04);
-}
-
-.gallery-overlay {
-  position: absolute;
-  inset: auto 0 0;
-  padding: 0.8rem;
-  background: linear-gradient(to top, var(--charcoal-soft), var(--ink));
-}
-
-.gallery-overlay p {
-  font-size: 0.85rem;
-  margin: 0;
-}
-
-.gallery-overlay .mood {
-  color: var(--white);
 }
 
 .experience {
@@ -1016,12 +989,6 @@ ul {
 .lightbox-frame img {
   max-height: 78vh;
   object-fit: contain;
-}
-
-.lightbox-frame figcaption {
-  margin-top: 0.65rem;
-  color: var(--ivory);
-  text-align: center;
 }
 
 .lightbox-close,

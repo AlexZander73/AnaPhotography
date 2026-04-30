@@ -1152,6 +1152,14 @@ a:focus-visible {
     gap: 2rem;
   }
 
+  .intro-copy {
+    order: 2;
+  }
+
+  .intro-image {
+    order: 1;
+  }
+
   .gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

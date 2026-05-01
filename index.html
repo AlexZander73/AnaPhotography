@@ -308,20 +308,105 @@
       <section class="contact section reveal" id="contact" aria-labelledby="contact-title">
         <div class="container contact-grid">
           <div class="contact-copy">
-            <h2 id="contact-title">Let's create together</h2>
-            <a class="btn btn-primary booking-link" data-booking-link href="#">Open booking form</a>
+            <h2 id="contact-title" tabindex="-1">Let's create together</h2>
+            <p>
+              Share the essentials and I’ll follow up with availability, next steps, and the best
+              fit for your shoot.
+            </p>
           </div>
 
-          <article class="contact-card offer-card-dark-text">
-            <h3>Session enquiries now open</h3>
-            <ul>
-              <li>Portraits, couples, creative, lifestyle, events</li>
-              <li>Custom quotes available</li>
-              <li>Limited weekly availability</li>
-            </ul>
-            <!-- Future custom form placeholder: Add an embedded or native form here once workflow is confirmed. -->
-          </article>
+          <form
+            class="contact-card contact-form"
+            id="booking-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/formResponse"
+            method="POST"
+            target="booking-form-target"
+          >
+            <div class="form-grid">
+              <div class="field">
+                <label class="form-label" for="booking-email">Email</label>
+                <input
+                  class="form-control"
+                  id="booking-email"
+                  name="emailAddress"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label class="form-label" for="booking-name">Your name</label>
+                <input
+                  class="form-control"
+                  id="booking-name"
+                  name="entry.741005754"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label class="form-label" for="booking-phone">Phone number</label>
+                <input
+                  class="form-control"
+                  id="booking-phone"
+                  name="entry.1452168163"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="+61 ..."
+                />
+              </div>
+
+              <div class="field">
+                <label class="form-label" for="booking-shoot">Choose Shoot</label>
+                <select class="form-control" id="booking-shoot" name="entry.1348587516">
+                  <option value="">Select a shoot type</option>
+                  <option value="Business">Business</option>
+                  <option value="Private">Private</option>
+                  <option value="Event">Event</option>
+                  <option value="Commercial">Commercial</option>
+                </select>
+              </div>
+
+              <div class="field field-full">
+                <label class="form-label" for="booking-message">Message</label>
+                <textarea
+                  class="form-control form-control-textarea"
+                  id="booking-message"
+                  name="entry.1686327555"
+                  rows="6"
+                  placeholder="Tell me about the mood, timing, location, and what you want this shoot to feel like."
+                ></textarea>
+              </div>
+            </div>
+
+            <input type="hidden" name="fvv" value="1" />
+            <input type="hidden" name="fbzx" value="1282646725773143806" />
+            <input type="hidden" name="partialResponse" value="[null,null,&quot;1282646725773143806&quot;]" />
+            <input type="hidden" name="pageHistory" value="0" />
+            <input type="hidden" name="submissionTimestamp" value="-1" />
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send booking request</button>
+              <p class="form-note">
+                This sends directly into Ana’s booking workflow, without sending you off the site.
+              </p>
+            </div>
+
+            <p class="form-status" id="booking-form-status" aria-live="polite"></p>
+          </form>
         </div>
+
+        <iframe
+          class="form-target"
+          name="booking-form-target"
+          id="booking-form-target"
+          title="Hidden booking form submission target"
+        ></iframe>
       </section>
 
       <section class="closing-cta section" aria-labelledby="closing-title">

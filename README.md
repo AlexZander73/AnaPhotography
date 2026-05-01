@@ -1,4 +1,4 @@
-# Studio Name Photography Website
+# Behmen Studio by Ana Behmenburg Website
 
 Static, mobile-first photography portfolio and booking website built with plain HTML, CSS, and vanilla JavaScript.
 
@@ -14,16 +14,11 @@ This site is designed as an elegant, image-led booking funnel for a solo photogr
 It includes:
 - Sticky glassy navigation with mobile menu
 - Full-screen hero and repeated booking CTAs
-- Trust/vibe badges
 - Storytelling intro block
 - Signature featured carousel
 - Filterable mood-based gallery with lightbox
-- Photoshoot experience steps
-- Session type cards
-- Offer/booking section
-- Testimonials placeholders
-- FAQ accordion
-- Contact/booking section (Google Form link)
+- Services section
+- Contact/booking section with a styled on-page form that posts into Google Forms
 - Final CTA and footer
 
 ## How to preview locally
@@ -64,7 +59,7 @@ Each gallery item should include:
 - `caption`
 - `span` (optional masonry height span)
 
-## How to replace Google Form link
+## How the booking form works
 
 In `script.js`, replace:
 
@@ -72,16 +67,24 @@ In `script.js`, replace:
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
 ```
 
-All booking buttons/links using `data-booking-link` or `.booking-link` now scroll users to the embedded booking form in the contact section.
+All booking buttons/links using `data-booking-link` or `.booking-link` now scroll users to the contact form in the contact section.
 
-The embedded form uses:
+The site form posts directly to Google Forms using:
 
 ```js
-const GOOGLE_FORM_EMBED_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/viewform?embedded=true";
+const GOOGLE_FORM_POST_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/formResponse";
 ```
 
-A fallback button in the contact section still opens the short Google Form link in a new tab.
+The live field mapping currently used by the site form is:
+
+- `emailAddress`
+- `entry.741005754` for `Your name`
+- `entry.1452168163` for `Phone number`
+- `entry.1348587516` for `Choose Shoot`
+- `entry.1686327555` for `Message`
+
+If the Google Form is changed later, these field IDs will need to be updated to match.
 
 ## Deploy to GitHub Pages
 

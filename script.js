@@ -1,5 +1,7 @@
 // Website designed by Zach Mackay: https://alexzander73.github.io/index.html
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
+const GOOGLE_FORM_POST_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/formResponse";
 const THEME_STORAGE_KEY = "ab-theme";
 const DEFAULT_LOGO_URL = "assets/icons/logo-ab.svg";
 const REQUESTED_LOGO_URL = "assets/icons/logo-ab-requested.svg";
@@ -566,6 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applySavedTheme();
   setYear();
   initThemeSelector();
+  initContactForm();
   wireBookingLinks();
   initNavigation();
   initScrollReveal();
@@ -685,25 +688,106 @@ function syncThemeBrandAssets(theme) {
 
 function wireBookingLinks() {
   const bookingElements = document.querySelectorAll("[data-booking-link], .booking-link");
-  const usesPlaceholder = GOOGLE_FORM_URL.includes("REPLACE_WITH_REAL_FORM_LINK");
-
-  if (usesPlaceholder) {
-    console.warn(
-      "Booking form URL is still a placeholder. Replace GOOGLE_FORM_URL in script.js before launch."
-    );
-  }
+  const contactSection = document.getElementById("contact");
+  const contactTitle = document.getElementById("contact-title");
 
   bookingElements.forEach((element) => {
     if (element instanceof HTMLAnchorElement) {
-      element.href = GOOGLE_FORM_URL;
-      element.target = "_blank";
-      element.rel = "noopener noreferrer";
+      element.href = "#contact";
+      element.removeAttribute("target");
+      element.removeAttribute("rel");
       return;
     }
 
     element.addEventListener("click", () => {
-      window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer");
+      if (!contactSection) {
+        window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer");
+        return;
+      }
+
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.setTimeout(() => {
+        contactTitle?.focus?.();
+      }, 320);
     });
+  });
+}
+
+function initContactForm() {
+  const form = document.getElementById("booking-form");
+  const status = document.getElementById("booking-form-status");
+  const target = document.getElementById("booking-form-target");
+
+  if (!(form instanceof HTMLFormElement) || !(status instanceof HTMLElement)) {
+    return;
+  }
+
+  form.action = GOOGLE_FORM_POST_URL;
+
+  let awaitingResponse = false;
+  let submitFallbackId = null;
+
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  const resetSubmitButton = () => {
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = false;
+      submitButton.textContent = "Send booking request";
+    }
+  };
+
+  form.addEventListener("submit", (event) => {
+    if (!form.reportValidity()) {
+      event.preventDefault();
+      status.textContent = "Please complete the required fields before sending.";
+      status.classList.remove("is-success");
+      status.classList.add("is-error");
+      resetSubmitButton();
+      return;
+    }
+
+    awaitingResponse = true;
+    status.textContent = "Sending your request...";
+    status.classList.remove("is-success", "is-error");
+
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    if (submitFallbackId) {
+      window.clearTimeout(submitFallbackId);
+    }
+
+    submitFallbackId = window.setTimeout(() => {
+      if (!awaitingResponse) {
+        return;
+      }
+
+      awaitingResponse = false;
+      status.textContent =
+        "The form is taking longer than expected. Please try again in a moment.";
+      status.classList.remove("is-success");
+      status.classList.add("is-error");
+      resetSubmitButton();
+    }, 12000);
+  });
+
+  target?.addEventListener("load", () => {
+    if (!awaitingResponse) {
+      return;
+    }
+
+    awaitingResponse = false;
+    if (submitFallbackId) {
+      window.clearTimeout(submitFallbackId);
+      submitFallbackId = null;
+    }
+    form.reset();
+    status.textContent = "Thanks. Your request has been sent and Ana will follow up soon.";
+    status.classList.remove("is-error");
+    status.classList.add("is-success");
+    resetSubmitButton();
   });
 }
 

@@ -61,7 +61,12 @@ Build first complete version of a static photography portfolio + booking website
   - Instagram linked to `@anasta_behm`
   - Copyright attribution linked to Zach Mackay
 - Added featured offer/booking CTA section
-- Added contact section using embedded Google Form + fallback direct-link button
+- Replaced the old booking CTA card with a native on-page contact form that posts directly into Google Forms:
+  - Email
+  - Your name
+  - Phone number
+  - Choose shoot
+  - Message
 - Added placeholder testimonials (JS-driven)
 - Added FAQ accordion (JS-driven) with `aria-expanded`
 - Added final CTA section
@@ -76,12 +81,10 @@ Build first complete version of a static photography portfolio + booking website
 - Added image error fallback styling so missing placeholder images still look intentional
 - Added centralized booking-link logic:
   - `GOOGLE_FORM_URL` constant in `script.js`
-  - `GOOGLE_FORM_EMBED_URL` constant in `script.js`
-  - `.booking-link` / `[data-booking-link]` elements scroll to the embedded booking form
-  - Fallback direct-link button opens the short Google Form URL in a new tab
+  - `GOOGLE_FORM_POST_URL` constant in `script.js`
+  - `.booking-link` / `[data-booking-link]` elements scroll to the on-page contact form
 - Updated `GOOGLE_FORM_URL` to live short link:
   - `https://forms.gle/YRux1aAa2SjVNpq47`
-- Embedded live Google Form directly into the contact section
 - Exported selected client-supplied originals into optimized site assets:
   - `assets/images/web/*.webp`
   - `assets/images/thumbnails/*.webp`
@@ -124,13 +127,14 @@ Build first complete version of a static photography portfolio + booking website
   - `faqs` array
   - Gallery captions/alts/mood text
 
-## Where to add the Google Form link
+## Where to update the Google Form wiring
 - `script.js`
   - Current value:
     - `const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";`
-  - Embedded form value:
-    - `const GOOGLE_FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/viewform?embedded=true";`
-- No HTML changes required once this constant is updated.
+  - Post target value:
+    - `const GOOGLE_FORM_POST_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/formResponse";`
+- `index.html`
+  - Form field names must match the live Google Form entry IDs.
 
 ## Assumptions made
 - Website is single-page static (no backend, no build tooling).

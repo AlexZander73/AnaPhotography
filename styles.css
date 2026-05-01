@@ -1,4 +1,6 @@
 /* Website designed by Zach Mackay: https://alexzander73.github.io/index.html */
+/* Most normal text and photo updates should be done in index.html and script.js.
+   This file is mainly for design changes like colors, spacing, and layout. */
 :root {
   --white: #FFFFFF;
   --white-soft: #f7e5d7cc;

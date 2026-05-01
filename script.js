@@ -1,4 +1,7 @@
 // Website designed by Zach Mackay: https://alexzander73.github.io/index.html
+// Most photo updates happen in this file. If you want to add, remove, or swap portfolio images,
+// search for "galleryItems" below and update the image entries there.
+// Only change these Google Form links if the booking form itself is replaced.
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
 const GOOGLE_FORM_POST_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfcekjBsArkRfEiZrwBeXv1v7Gg5kuwwtgHnTbd9n-oqqgunA/formResponse";
@@ -6,6 +9,8 @@ const THEME_STORAGE_KEY = "ab-theme";
 const DEFAULT_LOGO_URL = "assets/icons/logo-ab.svg";
 const REQUESTED_LOGO_URL = "assets/icons/logo-ab-requested.svg";
 
+// This older featured list is currently not shown on the page.
+// You can ignore it unless the featured carousel is added back later.
 const featuredSlides = [
   {
     "src": "assets/images/web/library-titelbild-2000-19to9.webp",
@@ -81,6 +86,9 @@ const featuredSlides = [
   }
 ];
 
+// This is the main portfolio gallery list used on the website.
+// To update the gallery, edit the image path (`src`), description (`alt`),
+// and filter labels (`category` and `mood`) for each entry.
 const galleryItems = [
   {
     "src": "assets/images/web/library-titelbild-2000-19to9.webp",
@@ -645,7 +653,7 @@ function initThemeSelector() {
     try {
       window.localStorage.setItem(THEME_STORAGE_KEY, theme);
     } catch (error) {
-      // Ignore storage failures and keep the theme in-memory for this session.
+      // If the browser does not save the theme choice, the page still works normally.
     }
 
     buttons.forEach((button) => {

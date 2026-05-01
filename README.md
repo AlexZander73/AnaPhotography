@@ -2,6 +2,10 @@
 
 This website is ready to run as a simple static site.
 
+If you want the short version first, start with:
+
+- `HANDOVER-CHECKLIST.md`
+
 You do not need a database, app, or special software to update the wording or swap photos.
 
 For normal photo updates, the easiest workflow is:

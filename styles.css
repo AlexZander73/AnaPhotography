@@ -541,21 +541,6 @@ ul {
   font-size: 0.9rem;
 }
 
-.intro-grid {
-  display: grid;
-  gap: 1.6rem;
-}
-
-.intro-copy {
-  align-self: center;
-}
-
-.intro-copy p {
-  margin-top: 1rem;
-  max-width: 58ch;
-  color: var(--muted);
-}
-
 .frame-image {
   position: relative;
   border-radius: var(--radius-lg);
@@ -594,73 +579,6 @@ ul {
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   color: var(--white-soft);
-}
-
-.featured-carousel {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-.carousel-btn {
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 999px;
-  border: 1px solid var(--white-soft);
-  background: var(--charcoal-soft);
-  color: var(--white);
-  cursor: pointer;
-  transition: background 200ms ease;
-}
-
-.carousel-btn:hover,
-.carousel-btn:focus-visible {
-  background: var(--rust);
-}
-
-.featured-stage {
-  margin: 0;
-  min-height: min(68vh, 35rem);
-  display: grid;
-}
-
-.featured-stage img {
-  width: 100%;
-  height: min(68vh, 35rem);
-  object-fit: cover;
-}
-
-.carousel-meta {
-  margin-top: 0.95rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.carousel-dots {
-  display: flex;
-  gap: 0.5rem;
-  max-width: min(100%, 34rem);
-  overflow-x: auto;
-  padding-bottom: 0.15rem;
-  scrollbar-width: thin;
-}
-
-.carousel-dot {
-  flex: 0 0 auto;
-  width: 0.62rem;
-  height: 0.62rem;
-  border-radius: 999px;
-  border: 1px solid var(--white-soft);
-  background: var(--ink);
-  cursor: pointer;
-}
-
-.carousel-dot[aria-selected="true"] {
-  background: var(--accent);
 }
 
 .filter-row {
@@ -785,7 +703,7 @@ ul {
 .service-meta {
   margin-top: auto;
   display: grid;
-  gap: 0.9rem;
+  gap: 0;
   padding-top: 1rem;
 }
 
@@ -1033,17 +951,28 @@ ul {
   inset: 0;
   background:
     linear-gradient(120deg, var(--charcoal-soft), var(--ink)),
-    url("assets/images/web/final-cta-placeholder.webp") center/cover no-repeat;
+    url("assets/images/web/library-26portfolio-ev-beispiele-64.webp") center 22% / cover no-repeat;
   transform: scale(1.07);
 }
 
 .closing-inner {
   position: relative;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.closing-inner .btn {
-  margin-top: 1.15rem;
+.closing-bio {
+  max-width: min(44rem, 100%);
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--white-soft);
+  background: linear-gradient(180deg, rgba(24, 18, 17, 0.74), rgba(26, 20, 19, 0.88));
+  box-shadow: var(--shadow);
+}
+
+.closing-bio p {
+  margin-top: 1rem;
+  color: var(--white-soft);
 }
 
 .site-footer {
@@ -1076,48 +1005,6 @@ ul {
 
 .policy-page {
   background: var(--page-background);
-}
-
-.theme-switcher {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 120;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.7rem 0.85rem;
-  border: 1px solid var(--white-soft);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--bg-soft) 82%, transparent);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow);
-}
-
-.theme-switcher-label {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--white-soft);
-}
-
-.theme-options {
-  display: inline-flex;
-  gap: 0.35rem;
-}
-
-.theme-btn {
-  border: 1px solid var(--white-soft);
-  background: var(--bg-soft);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 0.45rem 0.75rem;
-  cursor: pointer;
-}
-
-.theme-btn.is-active {
-  background: var(--surface-accent);
-  color: var(--ink);
 }
 
 .policy-nav {
@@ -1304,10 +1191,6 @@ a:focus-visible {
     bottom: -4.5rem;
   }
 
-  .featured-stage img {
-    height: min(64vh, 27rem);
-  }
-
   .lightbox {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -1325,15 +1208,6 @@ a:focus-visible {
 
   .lightbox-nav.next {
     right: 0.7rem;
-  }
-
-  .theme-switcher {
-    left: 50%;
-    bottom: 0.85rem;
-    transform: translateX(-50%);
-    width: calc(100vw - 1.5rem);
-    max-width: 26rem;
-    justify-content: space-between;
   }
 
   .contact-grid {
@@ -1358,19 +1232,6 @@ a:focus-visible {
 }
 
 @media (min-width: 760px) {
-  .intro-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .intro-copy {
-    order: 2;
-  }
-
-  .intro-image {
-    order: 1;
-  }
-
   .gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

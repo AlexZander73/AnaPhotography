@@ -60,8 +60,8 @@
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#gallery">Portfolio</a>
-          <a href="#contact">Let's Create Together</a>
-          <a class="btn btn-primary booking-link nav-booking-btn" data-booking-link href="#contact">Book a session</a>
+          <a href="#about">About Me</a>
+          <a class="btn btn-primary booking-link nav-booking-btn" data-booking-link href="#contact">Contact Me</a>
         </nav>
       </div>
     </header>
@@ -96,29 +96,6 @@
         </div>
       </section>
 
-      <section class="intro section reveal" aria-labelledby="intro-title">
-        <div class="container intro-grid">
-          <div class="intro-copy">
-            <h2 id="intro-title">Hey, I'm Ana</h2>
-            <p>
-              Hi, I’m Ana—a professionally trained photographer from Germany with over 10 years of
-              experience across portraits, events, and brand photography. My work has taken me
-              across Australia, with time spent living in Sydney and Darwin. I’m now based on the
-              Gold Coast, offering sessions across the region to create authentic, high-quality
-              images that represent your most meaningful moments and milestones.
-            </p>
-          </div>
-          <figure class="intro-image frame-image">
-            <img
-              src="assets/images/web/library-26portfolio-ev-beispiele-64.webp"
-              alt="Portrait of Ana Behmenburg"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-        </div>
-      </section>
-
       <section class="sessions section reveal" id="services" aria-labelledby="services-title">
         <div class="container">
           <div class="section-head">
@@ -139,7 +116,6 @@
               </p>
               <div class="service-meta">
                 <p class="service-price">from $199</p>
-                <a class="btn btn-secondary service-cta booking-link" data-booking-link href="#contact">Enquire about this service</a>
               </div>
             </article>
 
@@ -154,7 +130,6 @@
               </p>
               <div class="service-meta">
                 <p class="service-price">from $499</p>
-                <a class="btn btn-secondary service-cta booking-link" data-booking-link href="#contact">Enquire about this service</a>
               </div>
             </article>
 
@@ -170,46 +145,13 @@
               </p>
               <div class="service-meta">
                 <p class="service-price">price on demand</p>
-                <a class="btn btn-secondary service-cta booking-link" data-booking-link href="#contact">Enquire about this service</a>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="featured section" id="gallery" aria-labelledby="featured-title">
-        <div class="container reveal">
-          <div class="section-head">
-            <h2 id="featured-title">Signature frames</h2>
-          </div>
-
-          <div class="featured-carousel" aria-label="Featured gallery carousel">
-            <button class="carousel-btn prev" type="button" aria-label="Previous featured image">
-              <span aria-hidden="true">←</span>
-            </button>
-
-            <figure class="featured-stage frame-image" id="featured-stage">
-              <img
-                id="featured-image"
-                src="assets/images/web/library-titelbild-2000-19to9.webp"
-                alt=""
-                loading="eager"
-                decoding="async"
-              />
-            </figure>
-
-            <button class="carousel-btn next" type="button" aria-label="Next featured image">
-              <span aria-hidden="true">→</span>
-            </button>
-          </div>
-
-          <div class="carousel-meta">
-            <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Featured slides"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mood-gallery section reveal" aria-labelledby="mood-title">
+      <section class="mood-gallery section reveal" id="gallery" aria-labelledby="mood-title">
         <div class="container">
           <div class="section-head">
             <h2 id="mood-title">Portfolio</h2>
@@ -409,22 +351,22 @@
         ></iframe>
       </section>
 
-      <section class="closing-cta section" aria-labelledby="closing-title">
+      <section class="closing-cta section" id="about" aria-labelledby="closing-title">
         <div class="closing-bg" aria-hidden="true"></div>
         <div class="container reveal closing-inner">
-          <h2 id="closing-title">Bring the mood. I’ll bring the camera.</h2>
-          <a class="btn btn-primary booking-link" data-booking-link href="#">Start your booking request</a>
+          <div class="closing-bio">
+            <h2 id="closing-title">Hey, I'm Ana</h2>
+            <p>
+              Hi, I’m Ana—a professionally trained photographer from Germany with over 10 years of
+              experience across portraits, events, and brand photography. My work has taken me
+              across Australia, with time spent living in Sydney and Darwin. I’m now based on the
+              Gold Coast, offering sessions across the region to create authentic, high-quality
+              images that represent your most meaningful moments and milestones.
+            </p>
+          </div>
         </div>
       </section>
     </main>
-
-    <div class="theme-switcher" aria-label="Theme selector">
-      <span class="theme-switcher-label">Theme</span>
-      <div class="theme-options" role="group" aria-label="Color theme options">
-        <button class="theme-btn" type="button" data-theme-choice="warm" aria-pressed="false">Option A</button>
-        <button class="theme-btn" type="button" data-theme-choice="requested" aria-pressed="false">Option B</button>
-      </div>
-    </div>
 
     <footer class="site-footer">
       <div class="container footer-grid">

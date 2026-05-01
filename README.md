@@ -10,6 +10,205 @@ For normal photo updates, the easiest workflow is:
 2. double-click `process-images.command`
 3. reopen `index.html` and check the result
 
+## Ownership and publishing options
+
+There are a few sensible ways to take over this website, depending on how much control you want.
+
+### Option A: keep the site on GitHub Pages
+
+This is the simplest option if you want to keep using GitHub as the host.
+
+Best when:
+
+- you want the lowest-maintenance setup
+- you are happy to keep the files in GitHub
+- you want to connect your own custom domain to GitHub Pages
+
+### Option B: clone or copy the project into your own GitHub account
+
+This is the best option if you want full ownership yourself.
+
+You can do this in either of these ways:
+
+- create your own GitHub repository and upload these files into it
+- clone the repository to your computer, then push it to a repository under your own account
+- download the project as a ZIP, then upload the files into a new repository
+
+If you want complete control long-term, this is the cleaner option.
+
+### Option C: host the site on Cloudflare Pages instead
+
+This works well if you prefer Cloudflare’s hosting and dashboard.
+
+Because this website is plain HTML, CSS, and JavaScript, it can be hosted there without a build step.
+
+Important:
+
+- if you choose Cloudflare Pages Direct Upload, Cloudflare says you cannot later switch that same project to Git integration
+- if you want Git-based deployments later, create a new Cloudflare Pages project for that
+
+## If you want full ownership
+
+If you want the site fully under your own control, the cleanest choices are:
+
+1. create your own GitHub repository and move the site there, or
+2. host the files directly on Cloudflare Pages under your own account
+
+Either way, make sure the following are under your control:
+
+- the GitHub repository or Cloudflare Pages project
+- the custom domain
+- the DNS settings
+- the Google Form connected to the contact form
+- the Instagram and business details shown on the website
+
+## GitHub Pages setup
+
+If you are using GitHub Pages, the basic setup is:
+
+1. Open the repository on GitHub
+2. Open `Settings`
+3. Open `Pages`
+4. Set the publishing source to the `main` branch
+5. Set the folder to `/ (root)`
+6. Save
+
+After GitHub finishes publishing, the site should be live on its GitHub Pages URL.
+
+### Custom domain on GitHub Pages
+
+If you want to connect your own domain on GitHub Pages:
+
+1. Open the repository on GitHub
+2. Go to `Settings` > `Pages`
+3. In `Custom domain`, enter your domain name and save it
+4. Then update your DNS records with your domain provider
+5. Wait for DNS to update
+6. Turn on `Enforce HTTPS` once GitHub allows it
+
+GitHub notes that DNS changes can take up to 24 hours to propagate.
+
+### DNS records for GitHub Pages
+
+If you are using a root domain such as `example.com`, GitHub’s official DNS records are:
+
+- `185.199.108.153`
+- `185.199.109.153`
+- `185.199.110.153`
+- `185.199.111.153`
+
+If you are using a `www` subdomain, create a `CNAME` that points to your GitHub Pages account domain, for example:
+
+- `www.example.com` → `YOUR-USERNAME.github.io`
+
+Important:
+
+- for GitHub Pages custom domains, the `CNAME` should point to `YOUR-USERNAME.github.io`
+- it should not point to the repository name
+- avoid wildcard DNS records like `*.example.com`
+
+GitHub also recommends verifying your custom domain for extra security.
+
+## Cloudflare hosting setup
+
+If you want to host the website on Cloudflare Pages instead of GitHub Pages, this website is simple enough to do that directly.
+
+### Easiest Cloudflare route
+
+1. Keep the project folder on your computer
+2. Make sure the website files are ready
+3. Log in to Cloudflare
+4. Go to `Workers & Pages`
+5. Create a new Pages project
+6. Choose `Direct Upload`
+7. Upload the project files
+8. Add your custom domain inside the Cloudflare Pages project
+
+Because this site is static, there is no build step required.
+
+### What to upload to Cloudflare
+
+Upload the website project itself, including:
+
+- `index.html`
+- `styles.css`
+- `script.js`
+- `gallery-data.js`
+- `assets/`
+- `privacy.html`
+- `terms.html`
+
+You do not need the large `originals/` folder for hosting unless you want to keep it in the same project archive for yourself.
+
+### Cloudflare note
+
+Cloudflare’s official Direct Upload documentation says:
+
+- drag-and-drop upload supports a folder or ZIP file
+- Direct Upload projects cannot later be switched to Git integration
+
+So if you think you may want automatic Git deployments later, it is worth deciding that before creating the project.
+
+## If you use Cloudflare only for DNS
+
+You do not have to host on Cloudflare just because you use Cloudflare for the domain.
+
+A common setup is:
+
+- website hosted on GitHub Pages
+- domain and DNS managed in Cloudflare
+
+That is perfectly valid too.
+
+## Basic changes you can make yourself
+
+You do not need help for normal edits like these:
+
+- changing the main page text
+- updating service descriptions
+- changing prices
+- replacing portfolio photos
+- updating hero photos
+- updating the About Me text
+- changing Instagram, location, or footer wording
+
+The simplest files to edit are:
+
+- `index.html`
+- `gallery-data.js`
+- `assets/images/web/`
+- `assets/images/thumbnails/`
+
+If you want to replace the portfolio in the easiest way, just add new full-size photos into:
+
+- `assets/images/originals/`
+
+Then run:
+
+- `process-images.command`
+
+## Changes that are better with technical help
+
+These are possible, but they are not the easiest “do it yourself” changes:
+
+- redesigning the layout
+- changing colors or spacing site-wide
+- changing the contact form structure
+- replacing the Google Form with a different system
+- changing hosting providers after launch
+- editing DNS if you are not comfortable with domain settings
+
+## Best handoff advice
+
+If you are taking over the site, the safest order is:
+
+1. make sure the domain is under your control
+2. make sure the hosting account is under your control
+3. make sure the Google Form belongs to you
+4. make a backup of the whole project folder
+5. test the site locally by opening `index.html`
+6. only then start changing photos, text, or domains
+
 ## What this website includes
 
 - Home page with hero section
@@ -210,6 +409,19 @@ If you ask someone else to help later, tell them:
 - the main content file is `index.html`
 - the portfolio gallery is auto-generated into `gallery-data.js`
 - the image processor is `process-images.command`
+
+## Official help links
+
+If you need current platform instructions later, these are the most useful official references:
+
+- GitHub Pages custom domains:
+  - [GitHub Docs: custom domains for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+- GitHub Pages domain verification:
+  - [GitHub Docs: verify a custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)
+- Cloudflare Pages direct upload:
+  - [Cloudflare Docs: Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/)
+- Cloudflare Pages custom domains:
+  - [Cloudflare Docs: custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)
 
 ## Credits
 

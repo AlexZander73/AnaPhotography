@@ -1,6 +1,6 @@
 // Website designed by Zach Mackay: https://alexzander73.github.io/index.html
-// Most photo updates happen in this file. If you want to add, remove, or swap portfolio images,
-// search for "galleryItems" below and update the image entries there.
+// Most portfolio photo updates can now be done by running process-images.command after dropping
+// full-size photos into assets/images/originals/. This file still contains the fallback gallery list.
 // Only change these Google Form links if the booking form itself is replaced.
 const GOOGLE_FORM_URL = "https://forms.gle/YRux1aAa2SjVNpq47";
 const GOOGLE_FORM_POST_URL =
@@ -86,10 +86,8 @@ const featuredSlides = [
   }
 ];
 
-// This is the main portfolio gallery list used on the website.
-// To update the gallery, edit the image path (`src`), description (`alt`),
-// and filter labels (`category` and `mood`) for each entry.
-const galleryItems = [
+// This is the fallback portfolio list. If gallery-data.js exists, it will override this list.
+const defaultGalleryItems = [
   {
     "src": "assets/images/web/library-titelbild-2000-19to9.webp",
     "alt": "Brand portrait photograph from Behmen Studio portfolio",
@@ -525,6 +523,11 @@ const galleryItems = [
     "span": 28
   }
 ];
+
+const galleryItems =
+  Array.isArray(window.SITE_GALLERY_ITEMS) && window.SITE_GALLERY_ITEMS.length
+    ? window.SITE_GALLERY_ITEMS
+    : defaultGalleryItems;
 
 const testimonials = [
   {
@@ -992,14 +995,14 @@ function initFeaturedCarousel() {
 function initMoodGallery() {
   const grid = document.getElementById("gallery-grid");
   const loadMoreBtn = document.getElementById("gallery-load-more");
-  const filterButtons = document.querySelectorAll(".filter-btn");
+  const filters = document.getElementById("gallery-filters");
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightbox-image");
   const closeBtn = document.querySelector(".lightbox-close");
   const prevBtn = document.querySelector(".lightbox-nav.prev");
   const nextBtn = document.querySelector(".lightbox-nav.next");
 
-  if (!grid || !loadMoreBtn || !lightbox || !lightboxImage || !closeBtn || !prevBtn || !nextBtn) {
+  if (!grid || !loadMoreBtn || !filters || !lightbox || !lightboxImage || !closeBtn || !prevBtn || !nextBtn) {
     return {
       closeLightbox: () => {},
       previousLightbox: () => {},
@@ -1012,9 +1015,43 @@ function initMoodGallery() {
   let lightboxIndex = 0;
   let visibleCount = 0;
 
+  const availableFilters = [
+    "All",
+    ...new Set(
+      galleryItems
+        .map((item) => item.mood)
+        .filter((mood) => typeof mood === "string" && mood.trim() && mood.trim() !== "All")
+    )
+  ];
+
   const getBatchSize = () => (window.matchMedia("(max-width: 759px)").matches ? 8 : 12);
   const resetVisibleCount = () => {
     visibleCount = getBatchSize();
+  };
+
+  const renderFilterButtons = () => {
+    filters.innerHTML = "";
+
+    const filterList = availableFilters.length <= 2 ? ["All"] : availableFilters;
+
+    filterList.forEach((filterName) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "filter-btn";
+      button.dataset.filter = filterName;
+      button.textContent = filterName;
+      button.classList.toggle("is-active", filterName === activeFilter);
+
+      button.addEventListener("click", () => {
+        activeFilter = filterName;
+        filters.querySelectorAll(".filter-btn").forEach((btn) => btn.classList.remove("is-active"));
+        button.classList.add("is-active");
+        resetVisibleCount();
+        renderGrid();
+      });
+
+      filters.appendChild(button);
+    });
   };
 
   const renderLightbox = () => {
@@ -1123,16 +1160,6 @@ function initMoodGallery() {
     markMissingImagesOnError(grid);
   };
 
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      activeFilter = button.dataset.filter || "All";
-      filterButtons.forEach((btn) => btn.classList.remove("is-active"));
-      button.classList.add("is-active");
-      resetVisibleCount();
-      renderGrid();
-    });
-  });
-
   loadMoreBtn.addEventListener("click", () => {
     visibleCount += getBatchSize();
     renderGrid();
@@ -1150,6 +1177,7 @@ function initMoodGallery() {
   });
 
   resetVisibleCount();
+  renderFilterButtons();
   renderGrid();
 
   return {

@@ -90,6 +90,11 @@ Build first complete version of a static photography portfolio + booking website
   - `assets/images/thumbnails/*.webp`
   - Reused real image exports for hero, gallery, session cards, OG image, and final CTA
 - Kept `assets/images/originals/` as a local source folder rather than pushing the full raw library into the static site repo
+- Added a simple handoff workflow for future photo updates:
+  - `process-images.command`
+  - `scripts/process_images.py`
+  - `gallery-data.js`
+  - drop full-size photos into `assets/images/originals/` and regenerate the portfolio automatically
 
 ## Tasks remaining
 - Replace all placeholder images with real exported photography assets

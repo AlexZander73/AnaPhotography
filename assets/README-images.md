@@ -2,6 +2,15 @@
 
 This folder system is set up to keep your original photos safe while also keeping the website fast.
 
+## Easiest workflow
+
+1. Put full-size photos into `assets/images/originals/`
+2. Double-click `process-images.command`
+3. The site will create the smaller web versions for you
+4. The portfolio gallery will refresh automatically
+
+Running the processor again refreshes the portfolio from whatever is currently inside `originals/`.
+
 ## What goes where
 
 ### `assets/images/originals/`
@@ -53,20 +62,34 @@ Avoid:
 - random camera names like `IMG_4837`
 - spaces if possible
 
+Cleaner names also create cleaner auto-generated image descriptions on the website.
+
 ## Where the website reads images from
 
 The website gets images from two places:
 
 - `index.html`
   - for fixed page images like hero cards and service photos
-- `script.js`
-  - for the portfolio gallery list
+- `gallery-data.js`
+  - for the auto-generated portfolio gallery list
+
+## Optional: create filter groups automatically
+
+If you place all original photos directly into `assets/images/originals/`, they will simply appear in the main portfolio.
+
+If you want gallery filters to appear automatically, create subfolders such as:
+
+- `assets/images/originals/Soft/`
+- `assets/images/originals/Bold/`
+- `assets/images/originals/Editorial/`
+
+The folder name becomes the gallery filter label.
 
 ## Good habit
 
 Whenever you add new website images:
 
 1. keep the originals in `originals/`
-2. export smaller web versions into `web/`
-3. export smaller preview versions into `thumbnails/`
-4. then update the file paths in `index.html` or `script.js`
+2. run `process-images.command`
+3. check the website in your browser
+4. only edit `index.html` if you want to change fixed images outside the portfolio

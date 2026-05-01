@@ -160,15 +160,8 @@
             <h2 id="mood-title">Portfolio</h2>
           </div>
 
-          <div class="filter-row" role="toolbar" aria-label="Gallery filter buttons">
-            <button class="filter-btn is-active" type="button" data-filter="All">All</button>
-            <button class="filter-btn" type="button" data-filter="Soft">Soft</button>
-            <button class="filter-btn" type="button" data-filter="Bold">Bold</button>
-            <button class="filter-btn" type="button" data-filter="Romantic">Romantic</button>
-            <button class="filter-btn" type="button" data-filter="Editorial">Editorial</button>
-            <button class="filter-btn" type="button" data-filter="Candid">Candid</button>
-            <button class="filter-btn" type="button" data-filter="Moody">Moody</button>
-          </div>
+          <!-- Portfolio filters are built automatically from the gallery data in gallery-data.js. -->
+          <div class="filter-row" id="gallery-filters" role="toolbar" aria-label="Gallery filter buttons"></div>
 
           <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
           <div class="gallery-actions">
@@ -416,6 +409,7 @@
       <button class="lightbox-nav next" type="button" aria-label="Next image">→</button>
     </div>
 
+    <script src="gallery-data.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
